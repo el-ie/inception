@@ -1,0 +1,102 @@
+
+DESCRIPTION CHRONOLOGIQUE DU PROCESSUS
+
+but : installer php fpm
+
+faut il obligatoirement avoir NGINX pour l'utiliser ? Comment l'installer avec l'image du hub ?
+
+php fpm (FastCGI Process Manager):
+SAPI (server application programming interface)
+
+" Dans le cas présent, le SAPI (Server API) mod_php est utilisé pour exécuter le
+  code PHP dans le serveur web Apache. Le SAPI mod_php permet à Apache de communiquer
+  avec PHP et d'exécuter des scripts PHP pour générer des pages web dynamiques. "
+
+mod_php :
+" Cela permet de gagner en performance en évitant les coûts liés à la communication
+  entre Apache et PHP via une interface CGI ou FastCGI. "
+
+php fpm :
+"PHP-FPM est une alternative au SAPI mod_php qui offre une meilleure isolation des 
+processus PHP et une gestion plus efficace des ressources système. :
+
+
+selon chatgpt le sapi de base de l'image utilisee est celui fourni avec apache : mod_php
+
+php -i | grep "Server API"
+reponse actuelle :
+Server API => Command Line Interface (*commande inutile)
+chatgpt: cela signifie que PHP est exécuté en mode CLI (Command Line Interface) et que le serveur web n'est pas utilisé
+
+je test la presence du SAPI :
+echo "<?php phpinfo();" > /var/www/html/test.php
+je peux acceder a http://localhost:8080/test.php sur le navigateur et donc je vois que le php est fonctionnel
+on peuet voir dans le tableau : Server API 	Apache 2.0 Handler 
+(bizarre vu que Server API => Command Line Interface)
+
+-----------------------------------------------------------------------------------
+
+PISTES
+
+changer mod_php par php fpm dans l'image actuelle
+
+regarder les "Supported tags and respective Dockerfile links" puis reutiliser les Dockerfile correspondant
+
+-----------------------------------------------------------------------------------
+
+QUESTIONNEMENT
+
+l'image de wordpress tourne avec apache, ne faudrait il pas plutot que j'utilise une image de wordpress sans 
+serveur et un container separe avec le server
+
+y a t il une image de wordpress sans apache ?
+
+----------------------------------------------------------------------------------
+
+OUTILS
+
+hub docker : Supported tags and respective Dockerfile links
+en cliquant sur les differentes versions de l'image on peut voir le dockerfile correspondant avec toutes les 
+etapes de creation de l'image
+
+reseau :
+" Lorsque vous utilisez docker-compose, il gère automatiquement les liens entre
+  les différents services et crée un réseau Docker par défaut pour les connecter.
+  Cela signifie que vous n'avez pas à vous soucier de la configuration de la 
+  communication entre les différents conteneurs. "
+
+COMMANDES
+
+docker-compose down
+supprime les containers en cours et + (tous ceux visibles avec ps et ceux visibles avec ps -a), approfondir
+
+docker network ls
+docker network inspect
+
+
+docker network prune
+supprime les network inutilises de docker
+
+-----------------------------------------------------------------------------------
+
+APACHE
+
+root@39236095b640:/# apachectl configtest
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.3. Set the 'ServerName' directive globally to suppress this message
+
+apachectl -V
+affiche toutes les informations importantes de l'apache utilise
+
+RESEAUX DOCKER
+
+Il existe différents types de réseaux Docker, notamment :
+
+    Bridge : le réseau par défaut de Docker qui permet aux conteneurs de communiquer entre eux sur le même hôte.
+
+    Host : un réseau qui connecte les conteneurs directement à l'interface réseau de l'hôte. Cela permet aux conteneurs d'utiliser les mêmes ports que l'hôte.
+
+    Overlay : un réseau qui permet à des conteneurs de communiquer entre eux sur plusieurs hôtes.
+
+    Macvlan : un réseau qui permet à un conteneur d'obtenir une adresse IP sur le réseau physique.
+
+    None : un réseau qui désactive le réseau pour le conteneur.
