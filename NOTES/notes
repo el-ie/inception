@@ -42,6 +42,10 @@ changer mod_php par php fpm dans l'image actuelle
 
 regarder les "Supported tags and respective Dockerfile links" puis reutiliser les Dockerfile correspondant
 
+arreter docker compose et lancer les images dans des terminaux directement
+
+Exactement, l'image Docker wordpress:cli ne contient pas WordPress, elle ne contient que WP-CLI et quelques autres outils nécessaires pour exécuter WP-CLI. Pour utiliser WP-CLI, vous devez avoir une installation de WordPress fonctionnelle à partir de laquelle vous pouvez exécuter les commandes WP-CLI.
+
 -----------------------------------------------------------------------------------
 
 QUESTIONNEMENT
