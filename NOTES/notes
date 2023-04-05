@@ -34,6 +34,14 @@ je peux acceder a http://localhost:8080/test.php sur le navigateur et donc je vo
 on peuet voir dans le tableau : Server API 	Apache 2.0 Handler 
 (bizarre vu que Server API => Command Line Interface)
 
+______
+
+tuto :
+https://bobcares.com/blog/docker-compose-nginx-php-fpm-mysql-wordpress/
+
+semble fonctionner
+
+
 -----------------------------------------------------------------------------------
 
 PISTES
