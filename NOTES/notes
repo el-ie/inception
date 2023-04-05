@@ -37,9 +37,14 @@ on peuet voir dans le tableau : Server API 	Apache 2.0 Handler
 ______
 
 tuto :
-https://bobcares.com/blog/docker-compose-nginx-php-fpm-mysql-wordpress/
+https://bobcares.com/blog/docker-compose-nginx-php-fpm-mysql-wordpress/ ->> SUCCESS
 
-semble fonctionner
+on a bien wordpress qui fonctionne avec php fmp et nginx en verifiant la page test.php rajoutee
+
+Maintenant on a la syntaxe "links:" du docker-compose a enlever car elle est interdite
+et on va essayer de remplacer ca par un network
+
+succes ! Link a ete enleve et bien remplace par network
 
 
 -----------------------------------------------------------------------------------
