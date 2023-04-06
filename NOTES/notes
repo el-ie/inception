@@ -92,9 +92,11 @@ supprime les containers en cours et + (tous ceux visibles avec ps et ceux visibl
 docker network ls
 docker network inspect
 
-
 docker network prune
 supprime les network inutilises de docker
+
+docker-compose config
+check certains problemes dans le docker-compose.yml
 
 -----------------------------------------------------------------------------------
 
