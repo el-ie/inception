@@ -47,6 +47,16 @@ et on va essayer de remplacer ca par un network
 succes ! Link a ete enleve et bien remplace par network
 
 
+		8 avril
+
+Enfait on peut faire tourner nginx seul et acceder a une page html (customizee) sur
+firefox en localhost
+(dockerfile : COPY nginx.conf /etc/nginx/nginx.conf - COPY site /var/www/html
+avec nginx.conf :
+events {@    worker_connections 1024;@}@@http {@    server {@        listen 80;@@        location / {@            root /var/www/html;@            index index.html;@        }@    }@}@
+
+
+
 -----------------------------------------------------------------------------------
 
 PISTES
@@ -121,3 +131,13 @@ Il existe différents types de réseaux Docker, notamment :
     Macvlan : un réseau qui permet à un conteneur d'obtenir une adresse IP sur le réseau physique.
 
     None : un réseau qui désactive le réseau pour le conteneur.
+
+COPY VS VOLUME : gpt
+	(COPY de Dockerfile vs volume de docker-compose.yml)
+	En résumé:
+ " COPY est utilisé pour inclure des fichiers statiques dans une image Docker lors de la construction, 
+   tandis que volumes est utilisé pour monter des fichiers et des répertoires depuis l'hôte vers un conteneur
+   Docker en cours d'exécution.
+   Les fichiers copiés avec COPY sont intégrés dans l'image Docker, alors que les fichiers et répertoires 
+   montés avec volumes sont partagés entre l'hôte et le conteneur en temps réel. "
+
