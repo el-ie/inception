@@ -71,6 +71,12 @@ Exactement, l'image Docker wordpress:cli ne contient pas WordPress, elle ne cont
 
 si besoin : image wordpress:fpm (wordpress - php fpm - nginx) ??
 
+		8 avril
+
+regarder le vrai Dockerfile de nginx
+entry point ?
+enlever le dockerfile du folder nginx car il est copie dans l image
+
 -----------------------------------------------------------------------------------
 
 QUESTIONNEMENT
@@ -107,6 +113,12 @@ supprime les network inutilises de docker
 
 docker-compose config
 check certains problemes dans le docker-compose.yml
+
+docker network create resoso
+docker run --name ctn_1 --network resoso -it debian:buster bash
+
+verifier la connection entre 2 container : on peut ping un container a partir d'un autre
+
 
 -----------------------------------------------------------------------------------
 
