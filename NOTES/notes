@@ -217,6 +217,13 @@ https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubunt
 gestion de mariadb :
 https://mariadb.com/kb/en/sysvinit/
 
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+	PHP-FPM
+
+Le module PHP-FPM permet la communication entre le serveur Nginx et PHP, basée sur le protocole FastCGI. Ce module, écoutant sur le port 9000 par défaut ou sur un socket UNIX, permet notamment l’exécution de scripts PHP dans un processus indépendant de Nginx avec des UID et GID différents. Il sera alors possible, dans le cas de la gestion de plusieurs applications sur un même serveur, de créer et configurer un groupe (appelé aussi pool) par application. Un pool définit notamment le UID/GID des processus PHP et le nombre de processus minimum, maximum ou encore le nombre de processus en attente à lancer.
+
 ===============================================================================
 
 	10 avril
@@ -250,6 +257,14 @@ wget https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/mas
 service mysql start
 SUCCESS (lance mariadb) utilise sysvinit et non systemd
 
-NON FAIT :
+
+
+
+
+	NON FAIT :
+installation php
 # apt-get install php7.2 php7.2-cli php7.2-fpm php7.2-mysql php7.2-json php7.2-opcache php7.2-mbstring php7.2-xml php7.2-gd php7.2-curl
-sudo apt-get -y install php-cli php-mysql php-curl php-gd php-intl
+OU sudo apt-get -y install php-cli php-mysql php-curl php-gd php-intl
+
+creation du "pool" pour php fpm
+/etc/php/7.4/fpm/pool.d/blog.conf
