@@ -195,3 +195,6 @@ COPY VS VOLUME : gpt
    Docker en cours d'exécution.
    Les fichiers copiés avec COPY sont intégrés dans l'image Docker, alors que les fichiers et répertoires 
    montés avec volumes sont partagés entre l'hôte et le conteneur en temps réel. "
+
+lancer un container en fesant qu'il ne s'arrete pas directement:
+docker -d debian:buster tail -f /dev/null
