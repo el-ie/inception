@@ -198,3 +198,37 @@ COPY VS VOLUME : gpt
 
 lancer un container en fesant qu'il ne s'arrete pas directement:
 docker -d debian:buster tail -f /dev/null
+
+===============================================================================
+
+	10 avril
+
+tout dans un conteneur
+
+apt-get update -y
+
+mkdir -p /srv/www (test)
+wget https://wordpress.org/latest.tar.gz
+
+tar xzf latest.tar.gz -C /srv/www/
+
+chown -R www-data /srv/www
+chmod -R 777 /srv
+
+	je n ai pas installe php
+
+apt-get install mariadb-server -y
+apt-get install systemd -y
+
+systemctl enable mariadb.service
+n'a pas corrige le probleme, utile quand meme ?
+
+probleme systemctl : https://stackoverflow.com/questions/59466250/docker-system-has-not-been-booted-with-systemd-as-init-system
+
+systemctl replacement to test :
+https://github.com/gdraheim/docker-systemctl-replacement
+wget https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl.py -O /usr/local/bin/systemctl
+
+service mysql start
+SUCCESS (lance mariadb) utilise sysvinit et non systemd
+
