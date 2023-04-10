@@ -224,37 +224,47 @@ https://mariadb.com/kb/en/sysvinit/
 
 Le module PHP-FPM permet la communication entre le serveur Nginx et PHP, basée sur le protocole FastCGI. Ce module, écoutant sur le port 9000 par défaut ou sur un socket UNIX, permet notamment l’exécution de scripts PHP dans un processus indépendant de Nginx avec des UID et GID différents. Il sera alors possible, dans le cas de la gestion de plusieurs applications sur un même serveur, de créer et configurer un groupe (appelé aussi pool) par application. Un pool définit notamment le UID/GID des processus PHP et le nombre de processus minimum, maximum ou encore le nombre de processus en attente à lancer.
 
+installation renseignements :
+https://www.php.net/manual/fr/install.fpm.php
+
 ===============================================================================
 
 	10 avril
 
-tout dans un conteneur
+TOUT EN UN CONTENEUR
 
 apt-get update -y
+
+apt-get install wget -y
+apt-get install nginx -y
+apt-get install mariadb-server -y
+apt-get install vim -y
 
 mkdir -p /srv/www (test)
 wget https://wordpress.org/latest.tar.gz
 
 tar xzf latest.tar.gz -C /srv/www/
 
+chown -R www-data: /srv/www
+?
 chown -R www-data /srv/www
-chmod -R 777 /srv
+
+chmod -R 777 /srv	utile?
 
 	je n ai pas installe php
 
-apt-get install mariadb-server -y
-apt-get install systemd -y
 
-systemctl enable mariadb.service
-n'a pas corrige le probleme, utile quand meme ?
-
-probleme systemctl : https://stackoverflow.com/questions/59466250/docker-system-has-not-been-booted-with-systemd-as-init-system
-
-systemctl replacement to test :
-https://github.com/gdraheim/docker-systemctl-replacement
-wget https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl.py -O /usr/local/bin/systemctl
+	systemd probleme non fonctionnel
+  apt-get install systemd -y
+  systemctl enable mariadb.service
+  n'a pas corrige le probleme, utile quand meme ?
+  probleme systemctl : https://stackoverflow.com/questions/59466250/docker-system-has-not-been-booted-with-systemd-as-init-system
+  systemctl replacement to test :
+  https://github.com/gdraheim/docker-systemctl-replacement
+  wget https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl.py -O /usr/local/bin/systemctl
 
 service mysql start
+service nginx start
 SUCCESS (lance mariadb) utilise sysvinit et non systemd
 
 
@@ -270,3 +280,10 @@ creation du "pool" pour php fpm
 /etc/php/7.4/fpm/pool.d/blog.conf
 
 modifier /etc/nginx/sites-available/?
+
+debian demande pour wordpress :
+sudo apt install apache2 \ ghostscript \ libapache2-mod-php \ mysql-server \ php \ php-bcmath \ php-curl \ php-imagick \ php-intl \ php-json \ php-mbstring \ php-mysql \ php-xml \ php-zip 
+
+wordpress.conf
+
+CONFIGURE mariadb database
