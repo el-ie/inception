@@ -268,3 +268,5 @@ OU sudo apt-get -y install php-cli php-mysql php-curl php-gd php-intl
 
 creation du "pool" pour php fpm
 /etc/php/7.4/fpm/pool.d/blog.conf
+
+modifier /etc/nginx/sites-available/?
