@@ -58,6 +58,8 @@ events {@    worker_connections 1024;@}@@http {@    server {@        listen 80;@
 
 
 -----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
 PISTES
 
@@ -77,6 +79,9 @@ regarder le vrai Dockerfile de nginx
 entry point ?
 enlever le dockerfile du folder nginx car il est copie dans l image
 
+google LEMP stack (linux/enginex/mariadb/php)
+
+-----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
 
 QUESTIONNEMENT
@@ -86,7 +91,17 @@ serveur et un container separe avec le server
 
 y a t il une image de wordpress sans apache ?
 
+faut il utiliser apt(-get) upgrade dans les vm
+
+y aura t il des restrictions de versions sur les paquets a installer
+
+vaut il mieux installer wordpress avec apt ou directement le telecharger par une requete ? 
+(apt installe plein de choses en plus avec wordpress tel que apache etc pour faire une LAMP)
+
+" Par défaut, l'installation de WordPress via "apt" configure un serveur Apache avec un hôte virtuel pour votre site WordPress. "
+
 ----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
 OUTILS
 
@@ -99,6 +114,8 @@ reseau :
   les différents services et crée un réseau Docker par défaut pour les connecter.
   Cela signifie que vous n'avez pas à vous soucier de la configuration de la 
   communication entre les différents conteneurs. "
+
+-----------------------------------------------------------------------------------
 
 COMMANDES
 
@@ -114,13 +131,21 @@ supprime les network inutilises de docker
 docker-compose config
 check certains problemes dans le docker-compose.yml
 
+CREER LES CONTAINERS EN INTERACTIF :
+
 docker network create resoso
 docker run --name ctn_1 --network resoso -it debian:buster bash
+docker run --name ctn_2 --network resoso -it debian:buster bash
 
 verifier la connection entre 2 container : on peut ping un container a partir d'un autre
 
+service ... status
+service ... start
 
 -----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+
 
 APACHE
 
@@ -129,6 +154,24 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 
 apachectl -V
 affiche toutes les informations importantes de l'apache utilise
+
+
+
+-----------------------------------------------------------------------------------
+
+WORDPRESS
+
+wordpress utilise ce user :
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+il faut donc adapter ses droits
+
+dans le dossier wordpress il y a un bon exemple de config :
+wp-config-sample.php
+
+
+-----------------------------------------------------------------------------------
+
+DOCKER
 
 RESEAUX DOCKER
 
@@ -152,4 +195,3 @@ COPY VS VOLUME : gpt
    Docker en cours d'exécution.
    Les fichiers copiés avec COPY sont intégrés dans l'image Docker, alors que les fichiers et répertoires 
    montés avec volumes sont partagés entre l'hôte et le conteneur en temps réel. "
-
