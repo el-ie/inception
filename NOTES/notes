@@ -155,7 +155,19 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 apachectl -V
 affiche toutes les informations importantes de l'apache utilise
 
+----------------------------------------------------------------------------------
 
+	NGINX
+
+en debut de configuration :
+/etc/nginx/sites-available/default definit que la page affichee sera situee a /var/www/html
+
+tester fichiers de configuration nginx :
+nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+https://nginx.org/en/docs/
 
 -----------------------------------------------------------------------------------
 
@@ -267,6 +279,8 @@ service mysql start
 service nginx start
 SUCCESS (lance mariadb) utilise sysvinit et non systemd
 
+attention nginx avant d'etre correctement configurer avec wordpress peut afficher la page
+/var/www/html/index.php qui peut contenir la page d'accueil de apache2
 
 
 
@@ -287,3 +301,7 @@ sudo apt install apache2 \ ghostscript \ libapache2-mod-php \ mysql-server \ php
 wordpress.conf
 
 CONFIGURE mariadb database
+
+
+https://www.nginx.com/resources/wiki/start/topics/recipes/wordpress/
+https://nginx.org/en/docs/
