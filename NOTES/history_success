@@ -1,6 +1,55 @@
 
 	Commandes importantes :
 
+------------------------------ 2ieme success ---------------------------
+
+    2  vim /etc/nginx/sites-available/wordpress.conf
+    3  vim /etc/nginx/sites-available/wordpress.conf
+    4  ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/
+    5  apt install php7.3-fpm
+    6  apt install php
+    7  service php7.3.fpm start
+    8  service php7.3-fpm start
+    9  service nginx start
+   10  apt install mysql
+   11  service mysql start
+   12  service nginx php7.3-fpm stop
+   13  service php7.3-fpm stop
+   14  service nginx stop
+   15  service nginx status
+   16  service mysql stop
+   17  service mysql start
+   18  service php7.3-fpm start
+   19  service nginx start
+   20  service nginx reload
+   21  service php7.3-fpm reload
+   22  cd /var/
+   23  ls
+   24  cd run
+   25  ls
+   26  cd php
+   27  ls
+   28  cat /etc/nginx/sites-available/wordpress.conf 
+   29  history | grep chmod
+   30  chmod -R 777 /srv
+   31  service status
+   32  service
+   33  service 
+   34  service --status-all
+   35  dpkg -l | grep php
+   36  apt install php7.3-mysql
+   37  service stop *
+   38  service --status-all
+   39  service mysql stop && service nginx stop && service php7.3-fpm stop
+   40   service php7.3-fpm stop
+   41  service mysql start; service nginx start; service php7.3-fpm start
+   42  service php7.3-fpm start
+   43  clear
+   44  history
+
+
+
+------------------------------ 1er success (faille) ----------------------
     3  chmod -R 777 /srv
     4  service nginx start
     9  apt-get install php-fpm
@@ -45,6 +94,8 @@
 
 	service mysql start ???
 	apt upgrade ??
+
+apt install php7.3-mysql +++++++++++++++++
 
 
 	Toutes les commandes :
