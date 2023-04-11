@@ -1,0 +1,64 @@
+
+Run apt-get update -y \
+&& apt-get install mariadb-server -y \
+&& apt-get install nginx -y \
+&& apt-get install wget -y \
+&& apt-get install vim -y \
+&& mkdir -p /srv/www \
+&& wget https://wordpress.org/latest.tar.gz \
+&& tar xzf latest.tar.gz -C /srv/www/ \
+&& chown -R www-data /srv
+
+test :
+
+vim /etc/nginx/sites-available/wordpress.conf (creation configuration)
+
+ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/
+
+apt-get install php7.3-fpm -y
+apt install php
+
+apt install php7.3-mysql +++++++++++++++++++++++++++++
+
+service nginx start
+
+service mysql start ??
+
+Your PHP installation appears to be missing the MySQL extension which is required by WordPress.
+
+Please check that the mysqli PHP extension is installed and enabled.
+
+apt-get install php -y
+
+----------------------------------------------------
+apt-get install php
+
+chmod -R 777 /srv
+service mysql start
+service nginx start
+
+cd /srv/www/wordpress/
+cp wp-config-sample.php wp-config.php
+vim wp-config.php
+vim /etc/mysql/mariadb.cnf
+cat mariadb.conf.d/my.cnf
+cat /srv/www/wordpress/wp-config.php
+
+service wordpress status
+
+cd wp-content
+cat index.php 
+
+service nginx status
+service apache2 status
+
+a un moment il faut faire un lien symbolique avec les fichiers nginx ?
+
+
+test chatgpt :
+sudo apt-get install php-fpm php-mysql
+
+
+idees
+
+utiliser systemd pour relancer nginx

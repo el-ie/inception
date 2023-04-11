@@ -19,7 +19,9 @@ COPY ./wordpress.conf /etc/nginx/sites-available/
 Run ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/
 
 COPY ./script_launch1 /
+COPY ./wp-config.php /srv/www/wordpress/
 
-ENTRYPOINT ["bash", "/script_launch1"]
+#ENTRYPOINT ["bash", "/script_launch1"]
 
+CMD ["sh", "./script_launch1"]
 #CMD ["&&", "tail", "-f", "/dev/null"]
