@@ -1,0 +1,273 @@
+
+	Commandes importantes :
+
+    3  chmod -R 777 /srv
+    4  service nginx start
+    9  apt-get install php-fpm
+   12  apt-get install php-mysql
+
+   22  apt install net-tools
+   25  netstat
+   27  netstat -plnt
+
+   28  apt install php  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+   35  vim /etc/nginx/sites-available/wordpress.conf 
+
+   40  apt install php7.3-fpm
+   41  apt install php-fpm @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+   44  cd /run/php
+
+    7  ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/
+
+   39  apt install systemd
+
+   53  find -name "php"
+
+   62  ls /etc/php/7.3/
+   63  ls /etc/php/7.3/fpm
+
+   88  apt upgrade (useless?)
+
+   93  dpkg -l | grep php-fpm
+   95  apt install locate
+   98  updatedb
+   99  locate php-fpm
+
+  106  cat /etc/php/7.3/fpm/php-fpm.conf 
+
+  123  cd pool.d/
+
+  142  service php7.3-fpm start
+
+  148  service nginx reload
+
+	service mysql start ???
+	apt upgrade ??
+
+
+	Toutes les commandes :
+
+    1  clear
+    2  ls
+    3  chmod -R 777 /srv
+    4  service nginx start
+    5  cd /srv/www/wordpress/
+    6  clear
+    7  ls
+    8  ls *config*
+    9  apt-get install php-fpm
+   10  cd
+   11  apt-get install php-fpm >stepss
+   12  apt-get install php-mysql
+   13  cat stepss 
+   14  ls
+   15  ls
+   16  clear
+   17  service nginx reload
+   18  service nginx stop
+   19  service nginx start
+   20  netstat
+   21  apt install netstat
+   22  apt install net-tools
+   23  clear
+   24  netsta=t
+   25  netstat
+   26  clear
+   27  netstat -plnt
+   28  apt install php
+   29  service nginx stop
+   30  service nginx start
+   31  service wordpress start
+   32  service nginx reload
+   33  clear
+   34  ls
+   35  vim /etc/nginx/sites-available/wordpress.conf 
+   36  cat /usr/share/doc/php7.3-fpm
+   37  cd /usr/share/doc/php7.3-fpm
+   38  ks
+   39  ls
+   40  apt install php7.3-fpm
+   41  apt install php-fpm
+   42  clear
+   43  ls
+   44  cd /run/php
+   45  ls
+   46  clear
+   47  cd /run
+   48  cd php
+   49  cd /etc/nginx
+   50  clear
+   51  ls
+   52  cd sites-enabled/
+   53  vim wordpress.conf 
+   54  vim wordpress.conf 
+   55  history
+   56  clear
+   57  history
+   58    141  service php-fpm start
+   59    142  service php7.3-fpm start
+   60    143  cd /run/php
+   61    144  ls
+   62    145  cat 
+   63    146  pwd
+   64    147  w
+   65    148  service nginx reload
+   66    149  clear
+   67    150  service nginx reload
+   68    151  history
+   69  history
+
+    1  clear
+    2  cd /etc/nginx/sites-available/
+    3  ls
+    4  vim wordpress.conf
+    5  pwd
+    6  ln -s /etc/nginx/sites-available/wordpress.conf 
+    7  ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/
+    8  cd ../sites-enabled/
+    9  ls
+   10  cat wordpress.conf 
+   11  ls
+   12  cd .,
+   13  cd ../sites-available/
+   14  clear
+   15  vim wordpress.conf 
+   16  cat ../sites-enabled/wordpress.conf 
+   17  cat default 
+   18  ls
+   19  vim wordpress.conf 
+   20  clear
+   21  cat default 
+   22  clear
+   23  vim default 
+   24  cat default 
+   25  service nginx reload
+   26  clear
+   27  cd /var
+   28  cd run
+   29  cd php
+   30  ls
+   31  cd
+   32  clear
+   33  cd /etc/nginx
+   34  ls
+   35  cd sites-available/
+   36  clear
+   37  nginx -t
+   38  clear
+   39  apt install systemd
+   40  clear
+   41  systemctl config nginx
+   42  systemctl nginx config
+   43  systemctl
+   44  clear
+   45  cd /run/php
+   46  cd /run
+   47  cd /var
+   48  cd run
+   49  cd php
+   50  cd
+   51  find --name "php"
+   52* 
+   53  find -name "php"
+   54  cd
+   55  cd /
+   56  find -name "php"
+   57  cd /var/lib/php
+   58  ls
+   59  ls modules/
+   60  ls sessions/
+   61  ls /etc/php
+   62  ls /etc/php/7.3/
+   63  ls /etc/php/7.3/fpm
+   64  cd /etc/php
+   65  ls
+   66  cd 7.3/
+   67  ls
+   68  cd fpm/
+   69  ls
+   70  ls -R
+   71  cd ..
+   72  ls
+   73  clear
+   74  ls -R
+   75  apt install php-fpm
+   76  find --name "php7.3-fpm.sock"
+   77  cd /
+   78  find -name "php7.3-fpm.sock"
+   79  find -name "php7.3-fpm*"
+   80  where php-fpm
+   81  whois php-fpm
+   82  who php-fpm
+   83  which php-fpm
+   84  cd /
+   85  which php
+   86  which php-fpm
+   87  apt install php-fpm
+   88  apt upgrade
+   89  which php-fpm
+   90  service php-fpm status
+   91  php-fpm -t
+   92  dpkg -l
+   93  dpkg -l | grep php-fpm
+   94  locate php-fpm
+   95  apt install locate
+   96  locate php-fpm
+   97  locate php-fpm
+   98  updatedb
+   99  locate php-fpm
+  100  cd /etc/php
+  101  ls
+  102  cd 7.3/
+  103  ls
+  104  cd fpm/
+  105  ls
+  106  cat php-fpm.conf 
+  107  pwd
+  108  ls
+  109  vim php-fpm.conf 
+  110  ps -aux
+  111  php
+  112  ps -aux
+  113  ls
+  114  vim php-fpm.conf 
+  115  cd conf.d/
+  116  ls
+  117  cd ..
+  118  clear
+  119  clear
+  120  ls
+  121  cat php-fpm.conf 
+  122  ls
+  123  cd pool.d/
+  124  clear
+  125  ls
+  126  cat www.conf 
+  127  cat www.conf | grep listen
+  128  clear
+  129  vim www.conf 
+  130  cat www.conf | grep sock
+  131  cd /run
+  132  cd php
+  133  cd /run/php
+  134  mkdir php
+  135  cd php
+  136  ls
+  137  php7.3-fpm
+  138  cd
+  139  php7.3-fpm
+  140  php-fpm
+  141  service php-fpm start
+  142  service php7.3-fpm start
+  143  cd /run/php
+  144  ls
+  145  cat 
+  146  pwd
+  147  w
+  148  service nginx reload
+  149  clear
+  150  service nginx reload
+  151  history
+

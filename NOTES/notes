@@ -142,6 +142,8 @@ verifier la connection entre 2 container : on peut ping un container a partir d'
 service ... status
 service ... start
 
+service --status-all --> super pour lister les services actifs
+
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
 
@@ -239,7 +241,27 @@ Le module PHP-FPM permet la communication entre le serveur Nginx et PHP, basée 
 installation renseignements :
 https://www.php.net/manual/fr/install.fpm.php
 
+/etc/php/7.3/fpm
+/etc/php/7.3/fpm/php-fpm.conf
+
+service php7.3-fpm start LANCEMENT
+
+on a /run/php/php7.3-fpm.sock
+
 ===============================================================================
+
+
+
+	11 avril
+
+Il faut lancer php-fpm avec service php7.3-fpm start
+SUCCESSSSSSSSSSSSSSSSSSS
+
+
+
+
+
+
 
 	10 avril
 
@@ -281,9 +303,6 @@ SUCCESS (lance mariadb) utilise sysvinit et non systemd
 
 attention nginx avant d'etre correctement configurer avec wordpress peut afficher la page
 /var/www/html/index.php qui peut contenir la page d'accueil de apache2
-
-
-
 
 	NON FAIT :
 installation php
