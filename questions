@@ -1,0 +1,15 @@
+
+pourquoi docker-compose up ne prend pas en compte la modification des Dockerfile (meme en refesant un docker build -t test .)
+du coup --> docker-compose up --build
+
+---------------------------------------------------
+
+faut il faire
+
+	build:
+	  context: ./lala/lala
+	  dockerfile: Dockerfile
+ou
+	build: ./lala/lala/Dockerfile
+
+---------------------------------------------------

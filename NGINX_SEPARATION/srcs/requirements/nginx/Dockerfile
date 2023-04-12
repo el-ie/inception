@@ -1,6 +1,10 @@
 From debian:buster
 
-Run apt-get update -y
-#&& apt-get install vim
+Run apt-get update -y \
+&& apt-get install vim -y \
+&& apt-get install nginx -y \
+&& chown -R www-data /var/www/html
 
-CMD ["tail", "-f", "/dev/null"]
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
