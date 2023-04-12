@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+
+  test_nginx:
+
+      build:
+        context: ./requirements/nginx
+        dockerfile: Dockerfile
+      ports:
+          - '80:80'
+      volumes:
+          - ./conf:/etc/nginx/conf.d
+
+            #- ./logs/nginx:/var/log/nginx
+            #- ./wordpress:/var/www/html
+
+      restart: always
+      networks:
+        - testnetwork
+  
+#  mysql:
+#      image: mariadb
+#      ports:
+#          - '3306:3306'
+#      volumes:
+#          - ./db-data:/var/lib/mysql
+#      environment:
+#          - MYSQL_ROOT_PASSWORD=Strong password
+#      restart: always
+#      networks:
+#        - testnetwork
+#       
+#  wordpress:
+#  
+#      image: wordpress:4.7.1-php7.0-fpm
+#      ports:
+#          - '9000:9000'
+#      volumes:
+#          - ./wordpress:/var/www/html
+#      environment:
+#          - WORDPRESS_DB_NAME=wpdb
+#          - WORDPRESS_TABLE_PREFIX=wp_
+#          - WORDPRESS_DB_HOST=mysql
+#          - WORDPRESS_DB_PASSWORD=Strong password
+#            #links:
+#            #- mysql
+#      restart: always
+#      networks:
+#        - testnetwork
+
+networks:
+  testnetwork:
