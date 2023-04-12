@@ -8,17 +8,14 @@ Run apt-get update -y \
 && apt-get install php -y \
 && apt-get install php7.3-mysql -y \
 && apt-get install php7.3-fpm -y \
-&& chown -R www-data /var/www/html
-#&& mkdir -p /srv/www \
+&& chown -R www-data /var/www/html \
+&& mkdir -p /var/run/php
 
-#COPY ./wordpress.conf /etc/nginx/sites-available/
 
-#Run ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/
+#COPY ./conf/wp-config.php /var/www/html/
 
-#COPY ./script_launch1 /
-COPY ./wp-config.php /srv/www/wordpress/
 
-#ENTRYPOINT ["bash", "/script_launch1"]
-
-CMD ["php7.3-fpm", "-F", "-R"]
+CMD ["php-fpm7.3", "-F", "-R"]
+######################################
 #CMD ["&&", "tail", "-f", "/dev/null"]
+#ENTRYPOINT ["bash", "/script_launch1"]
