@@ -10,12 +10,12 @@ services:
       ports:
           - '80:80'
       volumes:
-          - ./conf:/etc/nginx/conf.d
+        - ./data/site:/var/www/html/
+        #- ./requirements/nginx/conf:/etc/nginx/conf.d
+        # inutile de faire un volume pour conf ?
+        #- ./logs/nginx:/var/log/nginx
 
-            #- ./logs/nginx:/var/log/nginx
-            #- ./wordpress:/var/www/html
-
-      restart: always
+        #restart: always
       networks:
         - testnetwork
   
