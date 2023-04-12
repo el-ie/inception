@@ -7,34 +7,18 @@ services:
       build:
         context: ./requirements/nginx
         dockerfile: Dockerfile
-        #build: ./requirements/nginx/Dockerfile
       ports:
           - '80:80'
       volumes:
         - ./data/site:/var/www/html/
-        #- ./requirements/nginx/conf:/etc/nginx/conf.d
-        # inutile de faire un volume pour conf ?
-        #- ./logs/nginx:/var/log/nginx
 
-        #restart: always
+      #restart: always
       container_name: container_nginx
       networks:
         - testnetwork
-  
-#  mysql:
-#      image: mariadb
-#      ports:
-#          - '3306:3306'
-#      volumes:
-#          - ./db-data:/var/lib/mysql
-#      environment:
-#          - MYSQL_ROOT_PASSWORD=Strong password
-#      restart: always
-#      networks:
-#        - testnetwork
-#       
+
 #  wordpress:
-#  
+#  depends on ...
 #      image: wordpress:4.7.1-php7.0-fpm
 #      ports:
 #          - '9000:9000'
@@ -47,6 +31,18 @@ services:
 #          - WORDPRESS_DB_PASSWORD=Strong password
 #            #links:
 #            #- mysql
+#      restart: always
+#      networks:
+#        - testnetwork
+  
+#  mysql:
+#      image: mariadb
+#      ports:
+#          - '3306:3306'
+#      volumes:
+#          - ./db-data:/var/lib/mysql
+#      environment:
+#          - MYSQL_ROOT_PASSWORD=Strong password
 #      restart: always
 #      networks:
 #        - testnetwork
