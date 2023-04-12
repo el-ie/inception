@@ -8,8 +8,9 @@ faut il faire
 
 	build:
 	  context: ./lala/lala
-	  dockerfile: Dockerfile
+	  dockerfile: Dockerfile  OUI COMME CA
 ou
-	build: ./lala/lala/Dockerfile
+	build: ./lala/lala/Dockerfile NE PAS FAIRE CA 
+			sinon le docker-compose up --build ne fonctione plus
 
 ---------------------------------------------------
