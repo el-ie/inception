@@ -5,8 +5,9 @@ Run apt-get update -y \
 && apt-get install nginx -y \
 && chown -R www-data /var/www/html
 
-#COPY conf/wordpress.conf /etc/nginx/conf.d/
+COPY conf/wordpress.conf /etc/nginx/conf.d/
 
+Run ln -s /etc/nginx/conf.d/wordpress.conf /etc/nginx/sites-enabled/
 
 EXPOSE 80
 
