@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  test_nginx:
+  camembert:
 
       build:
         context: ./requirements/nginx
@@ -10,7 +10,7 @@ services:
         #build: ./requirements/nginx/Dockerfile
       ports:
           - '80:80'
-      volumes:
+            volumes:
         - ./data/site:/var/www/html/
         #- ./requirements/nginx/conf:/etc/nginx/conf.d
         # inutile de faire un volume pour conf ?
