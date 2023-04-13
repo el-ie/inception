@@ -15,6 +15,9 @@ Run apt-get update -y \
 
 COPY ./conf/wp-config.php /var/www/html/
 
+#ajout
+COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
+
 COPY ./script_wordpress /root/utils/
 
 CMD ["sh", "/root/utils/script_wordpress"]

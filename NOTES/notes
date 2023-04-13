@@ -3,11 +3,36 @@
 restart nginx : docker exec -it container_nginx nginx -s reload ENFAIT NON
 docker restart container_nginx
 
+docker inspect
+
+faire marcher les requetes php :
+autorisations ?
+chown ne semble rien changer dans nginx
+
+checker server_name
+
+donner le nom du conteneur de php-fpm a fastcgi_pass !
+
+config fpm
+/etc/php/7.3/fpm/pool.d#
+
+solution pour faire communiquer nginx et php-fpm :
+dans /etc/nginx/sites-enables/wordpress.conf :
+fastcgi_pass <nom du conteneur>:9000;
+le nom du conteneur ici sera wordpress ...
+
+et il faut parametrer php-fpm pour ne pas le connecter au socker mais au port :
+/etc/php/7.3/fpm/pool.d/www.conf
+changer listen = blabla le socket
+par
+listen = 0.0.0.0:9000
+
+attention config nginx :ne pas oublier de delet default dans /etc/nginx/sites-enabled
+
+dans le docker compose bien changer le nom du service par wordpress vu que c est utilise dans le wordpress.conf
 
 
-
-
-
+----------------------------------------------------------------------------------------------------
 
 DESCRIPTION CHRONOLOGIQUE DU PROCESSUS
 
