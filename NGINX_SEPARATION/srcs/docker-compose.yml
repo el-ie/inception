@@ -17,23 +17,27 @@ services:
       networks:
         - testnetwork
 
-#  wordpress:
 #  depends on ...
-#      image: wordpress:4.7.1-php7.0-fpm
-#      ports:
-#          - '9000:9000'
-#      volumes:
-#          - ./wordpress:/var/www/html
-#      environment:
-#          - WORDPRESS_DB_NAME=wpdb
-#          - WORDPRESS_TABLE_PREFIX=wp_
-#          - WORDPRESS_DB_HOST=mysql
-#          - WORDPRESS_DB_PASSWORD=Strong password
-#            #links:
-#            #- mysql
-#      restart: always
-#      networks:
-#        - testnetwork
+
+  wordy:
+
+      build:
+        context: ./requirements/wordpress
+        dockerfile: Dockerfile
+      ports:
+          - '9000:9000'
+      volumes:
+        - ./data/site:/var/www/html/
+          #environment:
+          #    - WORDPRESS_DB_NAME=name
+          #    - WORDPRESS_TABLE_PREFIX=wp_
+          #    - WORDPRESS_DB_HOST=mysql
+          #    - WORDPRESS_DB_PASSWORD=pass
+            #links:
+            #- mysql
+      restart: always
+      networks:
+        - testnetwork
   
 #  mysql:
 #      image: mariadb
