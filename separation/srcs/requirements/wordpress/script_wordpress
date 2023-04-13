@@ -6,4 +6,4 @@ rm -rf /var/www/html/*
 tar xzf latest.tar.gz
 cp -r wordpress/* /var/www/html
 
-tail -f /dev/null
+php-fpm7.3 -F -R
