@@ -17,6 +17,8 @@ Run apt-get update -y \
 
 #COPY ./conf/wp-config.php /var/www/html/
 
+COPY ./script_wordpress ~/
+
 
 #CMD ["php-fpm7.3", "-F", "-R"]
 CMD ["sh", "./script_wordpress"]

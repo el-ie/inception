@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ~
 wget https://wordpress.org/latest.tar.gz
 tar xzf latest.tar.gz -C /var/www/html
 
