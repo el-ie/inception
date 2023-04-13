@@ -26,8 +26,8 @@ services:
         dockerfile: Dockerfile
       ports:
           - '9000:9000'
-      volumes:
-        - ./data/site:/var/www/html/
+            # volumes:
+            #   - ./data/site:/var/www/html/
           #environment:
           #    - WORDPRESS_DB_NAME=name
           #    - WORDPRESS_TABLE_PREFIX=wp_
@@ -35,7 +35,7 @@ services:
           #    - WORDPRESS_DB_PASSWORD=pass
             #links:
             #- mysql
-      #container_name: container_wordy
+      container_name: container_wordy
       #restart: always
       networks:
         - testnetwork
