@@ -1,9 +1,10 @@
 #!/bin/bash
 
-cd ~
+cd ~/utils
 wget https://wordpress.org/latest.tar.gz
-rm -rf /var/www/html/*
+#rm -rf /var/www/html/*
 tar xzf latest.tar.gz
 cp -r wordpress/* /var/www/html
+rm -rf latest.tar.gz
 
 php-fpm7.3 -F -R
