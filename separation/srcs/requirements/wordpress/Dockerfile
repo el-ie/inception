@@ -21,4 +21,4 @@ COPY ./script_wordpress ~/
 
 
 #CMD ["php-fpm7.3", "-F", "-R"]
-CMD ["sh", "./script_wordpress"]
+CMD ["sh", "~/script_wordpress"]
