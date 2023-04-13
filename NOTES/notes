@@ -84,6 +84,12 @@ google LEMP stack (linux/enginex/mariadb/php)
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
 
+FICHIERS
+
+/etc/php/7.3/fpm/php-fpm.conf
+
+----------------------------------------------------------------------------------
+
 QUESTIONNEMENT
 
 l'image de wordpress tourne avec apache, ne faudrait il pas plutot que j'utilise une image de wordpress sans 
