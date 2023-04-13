@@ -1,0 +1,6 @@
+#!/bin/bash
+
+wget https://wordpress.org/latest.tar.gz
+tar xzf latest.tar.gz -C /var/www/html
+
+exec 'php-fpm7.3 -F -R'

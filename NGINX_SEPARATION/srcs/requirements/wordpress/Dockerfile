@@ -18,7 +18,5 @@ Run apt-get update -y \
 #COPY ./conf/wp-config.php /var/www/html/
 
 
-CMD ["php-fpm7.3", "-F", "-R"]
-######################################
-#CMD ["&&", "tail", "-f", "/dev/null"]
-#ENTRYPOINT ["bash", "/script_launch1"]
+#CMD ["php-fpm7.3", "-F", "-R"]
+CMD ["sh", "./script_wordpress"]
