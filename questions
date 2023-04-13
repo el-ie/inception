@@ -14,3 +14,7 @@ ou
 			sinon le docker-compose up --build ne fonctione plus
 
 ---------------------------------------------------
+
+Quand on installe wordpress (Dockerfile + script), 
+que faut il faire si il y a deja les fichiers wordpress ou s'il y a deja le wp-config.php
+faut il les ecrasers ou les laisser ?

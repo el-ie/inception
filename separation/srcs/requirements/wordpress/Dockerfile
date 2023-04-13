@@ -11,11 +11,11 @@ Run apt-get update -y \
 && wget https://wordpress.org/latest.tar.gz \
 && tar xzf latest.tar.gz -C /var/www/html \
 && mkdir -p /var/run/php \
-&& mkdir ~/utils	
+&& mkdir -p /root/utils	
 
 COPY ./conf/wp-config.php /var/www/html/
 
-COPY ./script_wordpress ~/utils/
+COPY ./script_wordpress /root/utils/
 
-CMD ["sh", "~/utils/script_wordpress"]
+CMD ["sh", "/root/utils/script_wordpress"]
 #CMD ["php-fpm7.3", "-F", "-R"]
