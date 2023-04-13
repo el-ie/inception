@@ -1,4 +1,14 @@
 
+
+restart nginx : docker exec -it container_nginx nginx -s reload ENFAIT NON
+docker restart container_nginx
+
+
+
+
+
+
+
 DESCRIPTION CHRONOLOGIQUE DU PROCESSUS
 
 but : installer php fpm
