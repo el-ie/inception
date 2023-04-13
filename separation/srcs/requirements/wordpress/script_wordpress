@@ -2,6 +2,8 @@
 
 cd ~
 wget https://wordpress.org/latest.tar.gz
-tar xzf latest.tar.gz -C /var/www/html
+rm -rf /var/www/html/*
+tar xzf latest.tar.gz
+cp -r wordpress/* /var/www/html
 
-exec 'php-fpm7.3 -F -R'
+tail -f /dev/null
