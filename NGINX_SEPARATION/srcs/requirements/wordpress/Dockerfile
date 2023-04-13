@@ -10,6 +10,8 @@ Run apt-get update -y \
 && apt-get install php7.3-mysql -y \
 && apt-get install php7.3-fpm -y \
 && chown -R www-data /var/www/html \
+&& wget https://wordpress.org/latest.tar.gz \
+&& tar xzf latest.tar.gz -C /var/www/html \
 && mkdir -p /var/run/php
 
 
