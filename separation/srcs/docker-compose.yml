@@ -19,7 +19,7 @@ services:
 
 #  depends on ...
 
-  wordy:
+  wordpress:
 
       build:
         context: ./requirements/wordpress
