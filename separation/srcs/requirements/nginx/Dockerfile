@@ -12,4 +12,6 @@ Run ln -s /etc/nginx/conf.d/wordpress.conf /etc/nginx/sites-enabled/
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+#Run nginx -g daemon off;
+CMD ["tail", "-f", "/dev/null"]
+#CMD ["nginx", "-g", "daemon off;"] # REMETTRE
