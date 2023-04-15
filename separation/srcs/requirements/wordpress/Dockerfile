@@ -1,7 +1,6 @@
 From debian:buster
 
 Run apt-get update -y \
-&& apt-get install mariadb-server -y \
 && apt-get install wget -y \
 && apt-get install vim -y \
 && apt-get install php -y \
