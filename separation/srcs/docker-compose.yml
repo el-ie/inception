@@ -14,7 +14,7 @@ services:
         - ./data/site:/var/www/html/
 
       restart: always
-      container_name: container_nginx
+      container_name: nginxC
       networks:
         - testnetwork
 
@@ -25,8 +25,8 @@ services:
       build:
         context: ./requirements/wordpress
         dockerfile: Dockerfile
-      ports:
-          - '9000:9000'
+          #ports:
+          #- '9000:9000'
       volumes:
       - ./data/site:/var/www/html/
           #environment:
@@ -36,21 +36,22 @@ services:
           #    - WORDPRESS_DB_PASSWORD=pass
             #links:
             #- mysql
-      container_name: container_wordy
+      container_name: wordpressC
       restart: always
       networks:
         - testnetwork
 
   mariadb:
-    context: ./requirement/mariadb
-    dockerfile: Dockerfile
-      ports:
-          - '3306:3306'
-      volumes:
-      - ./data/database:/mariabase/
+
+    build:
+      context: ./requirements/mariadb
+      dockerfile: Dockerfile
+    volumes:
+    - ./data/database:/mariabase/
+    container_name: mariadbC
 #      restart: always
-      networks:
-        - testnetwork
+    networks:
+      - testnetwork
   
 #  mysql:
 #      image: mariadb
