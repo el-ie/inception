@@ -25,17 +25,17 @@ services:
       build:
         context: ./requirements/wordpress
         dockerfile: Dockerfile
+          #supprimer ports ?
       ports:
           - '9000:9000'
       volumes:
       - ./data/site:/var/www/html/
-          #environment:
-          #    - WORDPRESS_DB_NAME=name
-          #    - WORDPRESS_TABLE_PREFIX=wp_
-          #    - WORDPRESS_DB_HOST=mysql
-          #    - WORDPRESS_DB_PASSWORD=pass
-            #links:
-            #- mysql
+        # environment:
+        #     - WORDPRESS_DB_NAME=datata
+        #     - WORDPRESS_DB_USER=tobi
+        #     - WORDPRESS_TABLE_PREFIX=wp_
+        #     - WORDPRESS_DB_HOST=mariadb
+        #     - WORDPRESS_DB_PASSWORD=pass
       container_name: wordpressC
       restart: always
       networks:
@@ -46,14 +46,18 @@ services:
     build:
       context: ./requirements/mariadb
       dockerfile: Dockerfile
+        #supprimer ports ?
     ports:
       - '3306:3306'
+        # utilisation du volume ?
     volumes:
-    - ./data/database:/mariabase/
-    container_name: mariadbC
-#      restart: always
+      - ./data/database:/mariabase/
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+    container_name: mariadb
     networks:
       - testnetwork
+#      restart: always
   
 #  mysql:
 #      image: mariadb
