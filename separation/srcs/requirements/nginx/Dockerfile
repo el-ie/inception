@@ -21,6 +21,6 @@ Run openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/n
 #EXPOSE 80
 #EXPOSE 443 mettre ?
 
-#Run nginx -g daemon off;
+#remove
 CMD ["tail", "-f", "/dev/null"]
-#CMD ["nginx", "-g", "daemon off;"] # REMETTRE
+#CMD ["nginx", "-g", "daemon off;"]
