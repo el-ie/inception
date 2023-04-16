@@ -3,3 +3,5 @@ data/
 data
 old_wordpress.conf
 tls/
+MARIA_SUCCESS_LOG
+compar_to_delete

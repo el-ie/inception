@@ -1,0 +1,245 @@
+[
+    {
+        "Id": "067f8d5fdd3986e00f50d70118c8eb21c0224936e56b5885861b18159a876ca1",
+        "Created": "2023-04-15T23:59:41.539820423Z",
+        "Path": "tail",
+        "Args": [
+            "-f",
+            "/dev/null"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 56245,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2023-04-15T23:59:42.45397563Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:4cc49979ec4133d066ae3eb67d6d58256940196ae0aadd77bc72f055cacedeb4",
+        "ResolvConfPath": "/var/lib/docker/containers/067f8d5fdd3986e00f50d70118c8eb21c0224936e56b5885861b18159a876ca1/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/067f8d5fdd3986e00f50d70118c8eb21c0224936e56b5885861b18159a876ca1/hostname",
+        "HostsPath": "/var/lib/docker/containers/067f8d5fdd3986e00f50d70118c8eb21c0224936e56b5885861b18159a876ca1/hosts",
+        "LogPath": "/var/lib/docker/containers/067f8d5fdd3986e00f50d70118c8eb21c0224936e56b5885861b18159a876ca1/067f8d5fdd3986e00f50d70118c8eb21c0224936e56b5885861b18159a876ca1-json.log",
+        "Name": "/mariadbC",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": [
+            "80757fe8f1d47bcb1e5199ae0d26a9e31b0957658d7c1158f3f3beadab6abcdf"
+        ],
+        "HostConfig": {
+            "Binds": [
+                "/home/bob/ceptique/separation/srcs/data/database:/mariabase:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "srcs_testnetwork",
+            "PortBindings": {
+                "3306/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "3306"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "shareable",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/bf9b65e1580bedde18c3ddd736af9ab498bc64539a6faf3ab12ec1f8a2d5a3a7-init/diff:/var/lib/docker/overlay2/b4c773aa293ba37bc9049ae9ac038aa83a4e299aeb57cc89759db5cf23a94624/diff:/var/lib/docker/overlay2/bcef8d7d2cf40314773430eecb5fc69f3c582b4763b06aaf9739fcc2328558e4/diff",
+                "MergedDir": "/var/lib/docker/overlay2/bf9b65e1580bedde18c3ddd736af9ab498bc64539a6faf3ab12ec1f8a2d5a3a7/merged",
+                "UpperDir": "/var/lib/docker/overlay2/bf9b65e1580bedde18c3ddd736af9ab498bc64539a6faf3ab12ec1f8a2d5a3a7/diff",
+                "WorkDir": "/var/lib/docker/overlay2/bf9b65e1580bedde18c3ddd736af9ab498bc64539a6faf3ab12ec1f8a2d5a3a7/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/home/bob/ceptique/separation/srcs/data/database",
+                "Destination": "/mariabase",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "067f8d5fdd39",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "3306/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "tail",
+                "-f",
+                "/dev/null"
+            ],
+            "Image": "srcs_mariadb",
+            "Volumes": {
+                "/mariabase": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "c534fd5536db6bcaef5a3e36dcafc8a8e680a1b5f506603d8ddd0d356fc9c7d2",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "srcs",
+                "com.docker.compose.service": "mariadb",
+                "com.docker.compose.version": "1.23.2"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "6b55b33a9543d01f6943192c653c19f39e97b3523dedc31392dbba21ccacde49",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "3306/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "3306"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "3306"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/6b55b33a9543",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "srcs_testnetwork": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "mariadb",
+                        "067f8d5fdd39"
+                    ],
+                    "NetworkID": "3171b16df5227db59473eda17e8c3df58daabecba43cc6f941b7e2532a4644ae",
+                    "EndpointID": "284c26b7abc5220d488b689a77e681367f848914ccdeccdd164535b08c36fdef",
+                    "Gateway": "172.28.0.1",
+                    "IPAddress": "172.28.0.4",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:1c:00:04",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]

@@ -52,9 +52,9 @@ services:
         # utilisation du volume ?
     volumes:
       - ./data/database:/mariabase/
-    environment:
-      - MYSQL_ROOT_PASSWORD=pass
-    container_name: mariadb
+    #environment:
+    #  - MYSQL_ROOT_PASSWORD=pass
+    container_name: mariadbC
     networks:
       - testnetwork
 #      restart: always

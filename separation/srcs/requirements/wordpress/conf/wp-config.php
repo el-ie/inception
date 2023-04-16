@@ -29,7 +29,7 @@ define( 'DB_USER', 'tobi' );
 define( 'DB_PASSWORD', 'pass' );
 
 /** Database hostname */
-define( 'DB_HOST', 'mariadbC' );
+define( 'DB_HOST', 'localhost' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );

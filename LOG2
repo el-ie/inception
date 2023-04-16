@@ -1,0 +1,9 @@
+root@ab7e6bf3d2ab:/# mysql -u root -p
+
+Enter password: 
+
+CREATE DATABASE datata;
+
+CREATE USER 'tobi'@'localhost' IDENTIFIED BY 'pass';
+
+GRANT ALL PRIVILEGES ON datata.* TO 'tobi'@'localhost';
