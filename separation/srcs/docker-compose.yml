@@ -54,9 +54,9 @@ services:
         # utilisation du volume ?
     volumes:
       - ./data/database:/mariabase/
-        # environment:
+    environment:
+      -  MYSQL_DATABASE=datata
         #   -  MYSQL_ROOT_PASSWORD=pass
-        #   -  MYSQL_DATABASE=wp_datata
         #   -  MYSQL_USER=tobi
         #   -  MYSQL_PASSWORD=pass
         #     #- MYSQL_ROOT_PASSWORD=pass

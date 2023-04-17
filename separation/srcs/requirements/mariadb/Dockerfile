@@ -12,7 +12,10 @@ Run apt-get update -y \
 
 COPY ./conf/my.cnf /etc/mysql/my.cnf
 
-CMD ["tail", "-f", "/dev/null"]
+#CMD ["tail", "-f", "/dev/null"]
+
+Run service mysql start
+CMD ["mysqld"]
 
 #COPY ./script_mariadb /
-#CMD ["sh", "/script_mariadb"]
+#CMD ["bash", "/script_mariadb"]
