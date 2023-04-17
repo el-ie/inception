@@ -58,7 +58,7 @@ bind-address = 0.0.0.0
 
 GRANT ALL PRIVILEGES ON *.* TO 'tobi'@'wordpress.srcs_testnetwork' IDENTIFIED BY 'pass' WITH GRANT OPTION;
 
-CREATE DATABASE wp_datata;
+CREATE DATABASE datata;
 
 -------------------
 root@ab7e6bf3d2ab:/# mysql -u root -p
