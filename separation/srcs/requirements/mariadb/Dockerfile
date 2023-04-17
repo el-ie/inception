@@ -10,15 +10,9 @@ Run apt-get update -y \
 #&& apt-get install mariadb-client -y \
 #&& mkdir -p /root/utils	
 
-#CMD ["sh", "/root/utils/script_wordpress"]
+COPY ./conf/my.cnf /etc/mysql/my.cnf
 
-#CMD ["tail", "-f", "/dev/null"]
-#CMD ["mysqld"]
-
-#COPY ./script_mariadb /
-
-#CMD ["sh", "/script_mariadb"]
-#CMD ["mysqld"]
 CMD ["tail", "-f", "/dev/null"]
 
-#CMD ["mysqld"]
+#COPY ./script_mariadb /
+#CMD ["sh", "/script_mariadb"]
