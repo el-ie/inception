@@ -46,7 +46,19 @@ Welcome to the MariaDB monitor.  Commands end with ; or \g.
 USE <database>; choisir une database
 DESCRIBE <table>; montrer la table cree dans l'autre container
 
+-------------------------------------------
 
+SUCCESS DANS LES VRAIS CONTAINERS :
+
+container mariadb :
+
+dans le container mariadb dans le fichier /etc/mysql/my.cnf rajouter :
+[mysqld]
+bind-address = 0.0.0.0
+
+GRANT ALL PRIVILEGES ON *.* TO 'tobi'@'wordpress.srcs_testnetwork' IDENTIFIED BY 'pass' WITH GRANT OPTION;
+
+CREATE DATABASE wp_datata;
 
 -------------------
 root@ab7e6bf3d2ab:/# mysql -u root -p
