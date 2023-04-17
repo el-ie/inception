@@ -29,7 +29,9 @@ define( 'DB_USER', 'tobi' );
 define( 'DB_PASSWORD', 'pass' );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'mariadb' );
+
+#define( 'DB_port', '3306');
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -79,7 +81,12 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+
+// Enable WP_DEBUG mode
+define( 'WP_DEBUG', true );
+
+// Enable Debug logging to the /wp-content/debug.log file
+define( 'WP_DEBUG_LOG', true );
 
 /* Add any custom values between this line and the "stop editing" line. */
 

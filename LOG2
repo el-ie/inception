@@ -1,9 +1,93 @@
 root@ab7e6bf3d2ab:/# mysql -u root -p
 
+	WP_DATATA
 Enter password: 
 
 CREATE DATABASE datata;
 
 CREATE USER 'tobi'@'localhost' IDENTIFIED BY 'pass';
 
+GRANT ALL PRIVILEGES ON wp_datata.* TO 'tobi'@'localhost';
+
+wordpress
+
+CREATE USER 'tobi'@'wordpress' IDENTIFIED BY 'pass';
+
+GRANT ALL PRIVILEGES ON wp_datata.* TO 'tobi'@'wordpress';
+
+mariadb
+
+CREATE USER 'tobi'@'mariadb' IDENTIFIED BY 'pass';
+
+GRANT ALL PRIVILEGES ON wp_datata.* TO 'tobi'@'mariadb';
+
+%
+CREATE USER 'tobi'@'%' IDENTIFIED BY 'pass';
+
+GRANT ALL PRIVILEGES ON wp_datata.* TO 'tobi'@'%';
+
+	DATATA
+
+CREATE USER 'tobi'@'localhost' IDENTIFIED BY 'pass';
+
 GRANT ALL PRIVILEGES ON datata.* TO 'tobi'@'localhost';
+
+wordpress
+
+CREATE USER 'tobi'@'wordpress' IDENTIFIED BY 'pass';
+
+GRANT ALL PRIVILEGES ON datata.* TO 'tobi'@'wordpress';
+
+mariadb
+
+CREATE USER 'tobi'@'mariadb' IDENTIFIED BY 'pass';
+
+GRANT ALL PRIVILEGES ON datata.* TO 'tobi'@'mariadb';
+
+%
+CREATE USER 'tobi'@'%' IDENTIFIED BY 'pass';
+
+GRANT ALL PRIVILEGES ON datata.* TO 'tobi'@'%';
+-----------------------------------------------------------
+
+
+
+Faut il supprimer les services mysql pour "eviter toutes confusions entre les deux bases de donnee ??"
+rpm -qa | grep mysql (mariadb site
+sudo apt-get remove --purge mysql* (chatgpt
+
+Connecting to MariaDB from Outside the Container :
+https://mariadb.com/kb/en/installing-and-using-mariadb-via-docker/
+
+    if you are interested in viewing any existing remote users, issue the following SQL statement on the mysql.user table: 
+
+SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';
+
+---------------------------------------------------------
+mariadb :
+voir les connexions ?
+show status where variable_name = threads_connected;
+
+voir les utilisateurs :	
+SELECT SUBSTRING_INDEX(host, ':', 1) AS host_short,
+       GROUP_CONCAT(DISTINCT user) AS users,
+       COUNT(*) AS threads
+FROM information_schema.processlist
+GROUP BY host_short
+ORDER BY COUNT(*), host_short;
+
++------------+-------------+---------+
+| host_short | users       | threads |
++------------+-------------+---------+
+| localhost  | root        |       1 |
+|            | system user |       5 |
++------------+-------------+---------+
+
+
+MariaDB [(none)]> select user(), current_user();
++----------------+----------------+
+| user()         | current_user() |
++----------------+----------------+
+| root@localhost | root@localhost |
++----------------+----------------+
+

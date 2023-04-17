@@ -28,15 +28,17 @@ services:
           #supprimer ports ?
       ports:
           - '9000:9000'
+      depends_on:
+          - mariadb
       volumes:
-      - ./data/site:/var/www/html/
-        # environment:
-        #     - WORDPRESS_DB_NAME=datata
-        #     - WORDPRESS_DB_USER=tobi
-        #     - WORDPRESS_TABLE_PREFIX=wp_
-        #     - WORDPRESS_DB_HOST=mariadb
-        #     - WORDPRESS_DB_PASSWORD=pass
-      container_name: wordpressC
+          - ./data/site:/var/www/html/
+            # environment:
+            #     - WORDPRESS_DB_HOST=mariadb
+            #     - WORDPRESS_DB_USER=tobi
+            #     - WORDPRESS_DB_PASSWORD=pass
+            #     - WORDPRESS_DB_NAME=datata
+            #     - WORDPRESS_TABLE_PREFIX=wp_
+      container_name: wordpress
       restart: always
       networks:
         - testnetwork
@@ -52,12 +54,17 @@ services:
         # utilisation du volume ?
     volumes:
       - ./data/database:/mariabase/
-    #environment:
-    #  - MYSQL_ROOT_PASSWORD=pass
-    container_name: mariadbC
+        # environment:
+        #   -  MYSQL_ROOT_PASSWORD=pass
+        #   -  MYSQL_DATABASE=wp_datata
+        #   -  MYSQL_USER=tobi
+        #   -  MYSQL_PASSWORD=pass
+        #     #- MYSQL_ROOT_PASSWORD=pass
+    container_name: mariadb
+      #remettre mariadbC
     networks:
       - testnetwork
-#      restart: always
+    restart: always
   
 #  mysql:
 #      image: mariadb
