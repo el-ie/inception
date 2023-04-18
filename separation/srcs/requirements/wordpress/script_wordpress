@@ -2,4 +2,5 @@
 # faire un ptit truc vite fait bien fait tranquilou
 wp core download --path=/var/www/html --allow-root
 wp config create --path=/var/www/html --dbname=datata --dbuser=tobi --dbpass=pass --dbhost=mariadb --allow-root
+wp core install --path=/var/www/html --url="eamar.42.fr" --title="elephant de grabouilli" --admin_user=maitre --admin_password=pass --admin_email=elon.musk@yahoo.fr --allow-root
 php-fpm7.3 -F -R
