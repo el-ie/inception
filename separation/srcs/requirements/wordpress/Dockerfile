@@ -12,10 +12,9 @@ Run apt-get update -y \
 
 Run curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
 && chmod +x wp-cli.phar \
-&& mv wp-cli.phar /usr/local/bin/wp \
-&& wp core download --path=/var/www/html --allow-root
+&& mv wp-cli.phar /usr/local/bin/wp
 
-COPY ./conf/wp-config.php /
+#COPY ./conf/wp-config.php /
 
 #ajout
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/

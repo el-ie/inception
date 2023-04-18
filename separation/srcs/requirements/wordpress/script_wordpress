@@ -1,3 +1,5 @@
 #!/bin/bash
 # faire un ptit truc vite fait bien fait tranquilou
+wp core download --path=/var/www/html --allow-root
+wp config create --path=/var/www/html --dbname=datata --dbuser=tobi --dbpass=pass --dbhost=mariadb --allow-root
 php-fpm7.3 -F -R
