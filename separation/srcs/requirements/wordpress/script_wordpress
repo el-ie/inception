@@ -7,5 +7,6 @@ tar xzf latest.tar.gz
 cp -r wordpress/* /var/www/html
 rm -rf wordpress
 rm -rf latest.tar.gz
+cp /wp-config.php /var/www/html/
 
 php-fpm7.3 -F -R

@@ -14,7 +14,10 @@ COPY ./conf/my.cnf /etc/mysql/my.cnf
 
 #CMD ["tail", "-f", "/dev/null"]
 
-Run service mysql start
+Run service mysql start \
+&& mysql -e "CREATE DATABASE datata;" \
+&& mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'tobi'@'wordpress.srcs_testnetwork' IDENTIFIED BY 'pass' WITH GRANT OPTION;"
+
 CMD ["mysqld"]
 
 #COPY ./script_mariadb /
