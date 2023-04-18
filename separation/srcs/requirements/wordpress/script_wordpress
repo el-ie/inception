@@ -1,12 +1,3 @@
 #!/bin/bash
-
-cd /root/utils
-wget https://wordpress.org/latest.tar.gz
-#rm -rf /var/www/html/*
-tar xzf latest.tar.gz
-cp -r wordpress/* /var/www/html
-rm -rf wordpress
-rm -rf latest.tar.gz
-cp /wp-config.php /var/www/html/
-
+# faire un ptit truc vite fait bien fait tranquilou
 php-fpm7.3 -F -R

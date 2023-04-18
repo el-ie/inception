@@ -1,16 +1,19 @@
 From debian:buster
 
 Run apt-get update -y \
-&& apt-get install wget -y \
+&& apt-get install curl -y \
 && apt-get install vim -y \
 && apt-get install php -y \
 && apt-get install php7.3-mysql -y \
 && apt-get install php7.3-fpm -y \
 && chown -R www-data /var/www/html \
-&& wget https://wordpress.org/latest.tar.gz \
-&& tar xzf latest.tar.gz -C /var/www/html \
 && mkdir -p /var/run/php \
-&& mkdir -p /root/utils	
+&& mkdir -p /root/utils
+
+Run curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+&& chmod +x wp-cli.phar \
+&& mv wp-cli.phar /usr/local/bin/wp \
+&& wp core download --path=/var/www/html --allow-root
 
 COPY ./conf/wp-config.php /
 
