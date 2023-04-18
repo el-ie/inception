@@ -1,7 +1,6 @@
 From debian:buster
 
 Run apt-get update -y \
-&& apt-get install mariadb-server -y \
 && apt-get install wget -y \
 && apt-get install vim -y \
 && apt-get install php -y \
@@ -13,7 +12,7 @@ Run apt-get update -y \
 && mkdir -p /var/run/php \
 && mkdir -p /root/utils	
 
-COPY ./conf/wp-config.php /var/www/html/
+COPY ./conf/wp-config.php /
 
 #ajout
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
