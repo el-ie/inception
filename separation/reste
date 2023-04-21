@@ -1,0 +1,21 @@
+variables environnement
+
+ajouter
+
+depends on
+
+nom de domaine correcte ?
+
+makefile
+
+volume de mariadb ?
+
+network :
+mettre quelque chose apres ??
+host est interdit, voir ce qui se passe par defaut quand il n y a pas d/argument
+
+mettre les volumes au bon endroit (home/<login>/data) ...
+
+mariadb : checker si la database existe
+
+TLSv1.3

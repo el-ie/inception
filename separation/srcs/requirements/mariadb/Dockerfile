@@ -17,6 +17,7 @@ COPY ./conf/my.cnf /etc/mysql/my.cnf
 Run service mysql start \
 && mysql -e "CREATE DATABASE datata;" \
 && mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'tobi'@'wordpress.srcs_testnetwork' IDENTIFIED BY 'pass' WITH GRANT OPTION;"
+#flusher les privileges ? semble non indispensable
 
 CMD ["mysqld"]
 
