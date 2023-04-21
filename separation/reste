@@ -19,3 +19,8 @@ mettre les volumes au bon endroit (home/<login>/data) ...
 mariadb : checker si la database existe
 
 TLSv1.3
+
+volume wordpress
+ne pas refaire l'installation si il y a deja wordpress ?!!
+
+mettre un mot de passe a mariadb
