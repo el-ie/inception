@@ -35,3 +35,9 @@ dans le dockerfile, faut il faire ququ chose ?
 
 CERTS_=./XXXXX
 QU'est ce que c est que cette merde, ca appelle un fichier ??
+
+reparer le 666 a faire a chaque fois
+
+tester la persistance des donnees etc...
+
+tester si les fichiers wordpress existent avec de wp core isntall ??
