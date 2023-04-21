@@ -33,7 +33,7 @@ services:
       volumes:
           - ./data/site:/var/www/html/
       environment:
-            #     - MYSQL_DATABASE=datataTEST
+          - MYSQL_DATABASE=${DATABASE_NAME}
             #     - WORDPRESS_DB_HOST=mariadb
             #     - WORDPRESS_DB_USER=tobi
             #     - WORDPRESS_DB_PASSWORD=pass
@@ -56,7 +56,8 @@ services:
     volumes:
       - ./data/database:/mariabase/
     environment:
-      -  MYSQL_DATABASE=datata
+      - MYSQL_DATABASE=${DATABASE_NAME}
+        #-  MYSQL_DATABASE=datata
         #   -  MYSQL_ROOT_PASSWORD=pass
         #   -  MYSQL_USER=tobi
         #   -  MYSQL_PASSWORD=pass
