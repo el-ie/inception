@@ -16,7 +16,7 @@ ARG MYSQL_USER_PASS
 
 Run service mysql start \
 && mysql -e "CREATE DATABASE $MYSQL_DATABASE;" \
-&& mysql -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'wordpress.srcs_testnetwork' IDENTIFIED BY '$MYSQL_USER_PASS' WITH GRANT OPTION;" \
+&& mysql -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'wordpress.srcs_inception_network' IDENTIFIED BY '$MYSQL_USER_PASS' WITH GRANT OPTION;" \
 && mysql -e "FLUSH PRIVILEGES;"
 
 CMD ["mysqld"]

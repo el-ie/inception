@@ -16,7 +16,7 @@ services:
       restart: always
       container_name: nginxC
       networks:
-        - testnetwork
+        - inception_network
 
 #  depends on ...
 
@@ -43,7 +43,7 @@ services:
       container_name: wordpress
       restart: always
       networks:
-        - testnetwork
+        - inception_network
 
   mariadb:
 
@@ -61,15 +61,12 @@ services:
       - ./data/database:/mariabase/
     environment:
       - MYSQL_DATABASE=${DATABASE_NAME}
-        #-  MYSQL_DATABASE=datata
-        #   -  MYSQL_ROOT_PASSWORD=pass
-        #   -  MYSQL_USER=tobi
-        #   -  MYSQL_PASSWORD=pass
-        #     #- MYSQL_ROOT_PASSWORD=pass
+      #-  MYSQL_ROOT_PASSWORD=pass
+      #- MYSQL_ROOT_PASSWORD=pass
     container_name: mariadb
       #remettre mariadbC
     networks:
-      - testnetwork
+      - inception_network
     restart: always
   
 #  mysql:
@@ -82,7 +79,7 @@ services:
 #          - MYSQL_ROOT_PASSWORD=Strong password
 #      restart: always
 #      networks:
-#        - testnetwork
+#        - inception_network
 
 networks:
-  testnetwork:
+  inception_network:
