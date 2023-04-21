@@ -1,54 +1,7 @@
-root@ab7e6bf3d2ab:/# mysql -u root -p
+SELECT User FROM mysql.user;
+SHOW DATABASES;
 
-	WP_DATATA
-Enter password: 
-
-CREATE DATABASE datata;
-
-CREATE USER 'tobi'@'localhost' IDENTIFIED BY 'pass';
-
-GRANT ALL PRIVILEGES ON wp_datata.* TO 'tobi'@'localhost';
-
-wordpress
-
-CREATE USER 'tobi'@'wordpress' IDENTIFIED BY 'pass';
-
-GRANT ALL PRIVILEGES ON wp_datata.* TO 'tobi'@'wordpress';
-
-mariadb
-
-CREATE USER 'tobi'@'mariadb' IDENTIFIED BY 'pass';
-
-GRANT ALL PRIVILEGES ON wp_datata.* TO 'tobi'@'mariadb';
-
-%
-CREATE USER 'tobi'@'%' IDENTIFIED BY 'pass';
-
-GRANT ALL PRIVILEGES ON wp_datata.* TO 'tobi'@'%';
-
-	DATATA
-
-CREATE USER 'tobi'@'localhost' IDENTIFIED BY 'pass';
-
-GRANT ALL PRIVILEGES ON datata.* TO 'tobi'@'localhost';
-
-wordpress
-
-CREATE USER 'tobi'@'wordpress' IDENTIFIED BY 'pass';
-
-GRANT ALL PRIVILEGES ON datata.* TO 'tobi'@'wordpress';
-
-mariadb
-
-CREATE USER 'tobi'@'mariadb' IDENTIFIED BY 'pass';
-
-GRANT ALL PRIVILEGES ON datata.* TO 'tobi'@'mariadb';
-
-%
-CREATE USER 'tobi'@'%' IDENTIFIED BY 'pass';
-
-GRANT ALL PRIVILEGES ON datata.* TO 'tobi'@'%';
------------------------------------------------------------
+----------------------------------------------------------------
 
 
 
