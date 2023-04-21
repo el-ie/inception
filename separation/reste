@@ -24,3 +24,14 @@ volume wordpress
 ne pas refaire l'installation si il y a deja wordpress ?!!
 
 mettre un mot de passe a mariadb
+
+
+Dans env :
+
+DOMAIN_NAME=wil.42.fr
+J'ai mis DOMAIN_NAME comme dans l'exemple, sauf que si on change le DOMAIN_NAME il faut modifier
+le fichier /etc/hosts donc j'ai mis l'arg dans le docker-compose mais je j'ai pas appelle
+dans le dockerfile, faut il faire ququ chose ?
+
+CERTS_=./XXXXX
+QU'est ce que c est que cette merde, ca appelle un fichier ??

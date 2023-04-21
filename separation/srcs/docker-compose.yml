@@ -7,11 +7,14 @@ services:
       build:
         context: ./requirements/nginx
         dockerfile: Dockerfile
+        args:
+          DOMAIN_NAME: ${DOMAIN_NAME}
+        #INUTILISE POUR L INSTANT, UTILISER ??-> MODIFIER /etc/hosts ??
       ports:
           - '80:80'
           - '443:443'
       volumes:
-        - ./data/site:/var/www/html/
+        - /home/eamar/data/site:/var/www/html/
 
       restart: always
       container_name: nginxC
@@ -31,7 +34,7 @@ services:
       depends_on:
           - mariadb
       volumes:
-          - ./data/site:/var/www/html/
+          - /home/eamar/data/site:/var/www/html/
       environment:
           - MYSQL_DATABASE=${DATABASE_NAME}
           - MYSQL_USER=${DATABASE_USER}
@@ -65,21 +68,10 @@ services:
       #- MYSQL_ROOT_PASSWORD=pass
     container_name: mariadb
       #remettre mariadbC
+    restart: always
     networks:
       - inception_network
-    restart: always
-  
-#  mysql:
-#      image: mariadb
-#      ports:
-#          - '3306:3306'
-#      volumes:
-#          - ./db-data:/var/lib/mysql
-#      environment:
-#          - MYSQL_ROOT_PASSWORD=Strong password
-#      restart: always
-#      networks:
-#        - inception_network
 
 networks:
   inception_network:
+#Que se passe t il quand on ne precise rien ici
