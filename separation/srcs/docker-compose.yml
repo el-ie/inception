@@ -34,10 +34,11 @@ services:
           - ./data/site:/var/www/html/
       environment:
           - MYSQL_DATABASE=${DATABASE_NAME}
-            #     - WORDPRESS_DB_HOST=mariadb
-            #     - WORDPRESS_DB_USER=tobi
-            #     - WORDPRESS_DB_PASSWORD=pass
-            #     - WORDPRESS_DB_NAME=datata
+          - MYSQL_USER=${DATABASE_USER}
+          - MYSQL_USER_PASS=${DATABASE_USER_PASS}
+          - MYSQL_HOST=${DATABASE_HOST}
+          - MYSQL_ADMIN_USER=${DATABASE_ADMIN_USER}
+          - MYSQL_ADMIN_USER_PASS=${DATABASE_ADMIN_USER_PASS}
             #     - WORDPRESS_TABLE_PREFIX=wp_
       container_name: wordpress
       restart: always
