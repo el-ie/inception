@@ -51,3 +51,9 @@ attention incomprehension entre utilisateur wordpress et utilisateur mariadb
 Il faut creer un second utilisateur wordpress en plus de l'admin et je crois
 que tobi n'est pas un utilisateur wordpress mais l'utilisateur mariadb ??
 utiliser jocker appelle a un ami
+
+----
+
+Attention au message d'erreur de nginx lors du compose up, hostname machin...
+
+checker les logs pour voir si il n y a pas de probleme
