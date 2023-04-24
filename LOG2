@@ -1,3 +1,11 @@
+
+changer le pid1 de mariadb :
+docker run --network=srcs_inception_network --name mariadb -d srcs_mariadb tail -f /dev/null
+puis ouvrir mariadb en bash pour lancer mysql
+puis docker restart wordpress
+
+
+
 SELECT User FROM mysql.user;
 SHOW DATABASES;
 
