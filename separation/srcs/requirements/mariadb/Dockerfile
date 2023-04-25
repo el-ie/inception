@@ -20,3 +20,9 @@ Run service mysql start \
 && mysql -e "FLUSH PRIVILEGES;"
 
 CMD ["mysqld"]
+
+#COPY ./script /root
+#Run chmod 777 /root/script
+#CMD ["bash", "/root/script"]
+
+#CMD ["tail", "-f", "/dev/null"]

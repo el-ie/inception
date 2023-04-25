@@ -4,3 +4,5 @@ data
 old_wordpress.conf
 tls/
 compar_to_delete
+oldDockerfile
+script
