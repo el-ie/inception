@@ -16,9 +16,15 @@ ARG MYSQL_USER_PASS
 
 COPY ./script_mariadb /
 
-CMD ["sh", "/script_mariadb"]
+#AJOUT
+Run apt-get install mariadb-server -y
 
-#CMD ["tail", "-f", "/dev/null"]
+#fail :
+#Run mysqld
+
+#CMD ["sh", "/script_mariadb"]
+
+CMD ["tail", "-f", "/dev/null"]
 
 #-------------------------------
 #Run service mysql start \

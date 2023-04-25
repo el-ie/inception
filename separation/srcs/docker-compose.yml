@@ -80,4 +80,14 @@ services:
 
 networks:
   inception_network:
-#Que se passe t il quand on ne precise rien ici
+
+    #volumes:
+    #  mariadb
+    #  volumes:
+    #mariadb:
+    #  driver: local
+    #  driver_opts:
+    #    type: 'none'
+    #    o: 'bind'
+    #    device: /home/bob/ceptique/separation/srcs/DATABASE
+

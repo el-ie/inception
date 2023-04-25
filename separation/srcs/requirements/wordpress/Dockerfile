@@ -22,9 +22,9 @@ COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
 
 COPY ./script_wordpress /root/utils/
 
-CMD ["sh", "/root/utils/script_wordpress"]
+#CMD ["sh", "/root/utils/script_wordpress"]
 
-#CMD ["tail", "-f", "/dev/null"]
+CMD ["tail", "-f", "/dev/null"]
 
 #-----------------------------
 #CMD ["php-fpm7.3", "-F", "-R"]

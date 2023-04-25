@@ -1,0 +1,97 @@
+diff --git a/separation/srcs/docker-compose.yml b/separation/srcs/docker-compose.yml
+index d3678b1..1a09251 100644
+--- a/separation/srcs/docker-compose.yml
++++ b/separation/srcs/docker-compose.yml
+@@ -80,4 +80,14 @@ services:
+ 
+ networks:
+   inception_network:
+-#Que se passe t il quand on ne precise rien ici
++
++    #volumes:
++    #  mariadb
++    #  volumes:
++    #mariadb:
++    #  driver: local
++    #  driver_opts:
++    #    type: 'none'
++    #    o: 'bind'
++    #    device: /home/bob/ceptique/separation/srcs/DATABASE
++
+diff --git a/separation/srcs/requirements/mariadb/Dockerfile b/separation/srcs/requirements/mariadb/Dockerfile
+index 373a976..19474a8 100644
+--- a/separation/srcs/requirements/mariadb/Dockerfile
++++ b/separation/srcs/requirements/mariadb/Dockerfile
+@@ -16,9 +16,15 @@ ARG MYSQL_USER_PASS
+ 
+ COPY ./script_mariadb /
+ 
+-CMD ["sh", "/script_mariadb"]
++#AJOUT
++Run apt-get install mariadb-server -y
+ 
+-#CMD ["tail", "-f", "/dev/null"]
++#fail :
++#Run mysqld
++
++#CMD ["sh", "/script_mariadb"]
++
++CMD ["tail", "-f", "/dev/null"]
+ 
+ #-------------------------------
+ #Run service mysql start \
+diff --git a/separation/srcs/requirements/mariadb/script_mariadb b/separation/srcs/requirements/mariadb/script_mariadb
+index 5f98130..dc11914 100755
+--- a/separation/srcs/requirements/mariadb/script_mariadb
++++ b/separation/srcs/requirements/mariadb/script_mariadb
+@@ -1,6 +1,6 @@
+ #!/bin/bash
+ 
+-apt-get install mariadb-server -y
++#apt-get install mariadb-server -y
+ 
+ service mysql start
+ 
+@@ -9,4 +9,6 @@ mysql -e "CREATE DATABASE $MYSQL_DATABASE;"
+ mysql -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'wordpress.srcs_inception_network' IDENTIFIED BY '$MYSQL_USER_PASS' WITH GRANT OPTION;"
+ mysql -e "FLUSH PRIVILEGES;"
+ 
++service mysql stop
++
+ mysqld
+diff --git a/separation/srcs/requirements/wordpress/Dockerfile b/separation/srcs/requirements/wordpress/Dockerfile
+index cb9b999..48eb834 100644
+--- a/separation/srcs/requirements/wordpress/Dockerfile
++++ b/separation/srcs/requirements/wordpress/Dockerfile
+@@ -22,9 +22,9 @@ COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
+ 
+ COPY ./script_wordpress /root/utils/
+ 
+-CMD ["sh", "/root/utils/script_wordpress"]
++#CMD ["sh", "/root/utils/script_wordpress"]
+ 
+-#CMD ["tail", "-f", "/dev/null"]
++CMD ["tail", "-f", "/dev/null"]
+ 
+ #-----------------------------
+ #CMD ["php-fpm7.3", "-F", "-R"]
+diff --git a/separation/srcs/requirements/wordpress/script_wordpress b/separation/srcs/requirements/wordpress/script_wordpress
+index c70a28f..e0859ff 100755
+--- a/separation/srcs/requirements/wordpress/script_wordpress
++++ b/separation/srcs/requirements/wordpress/script_wordpress
+@@ -1,12 +1,13 @@
+ #!/bin/bash
+-# faire un ptit truc vite fait bien fait tranquilou
+ 
+-sleep 20
++#REMETTRE
++#sleep 20
+ 
+ wp core download --path=/var/www/html --allow-root
+ 
+ wp config create --path=/var/www/html --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_USER --dbpass=$MYSQL_USER_PASS --dbhost=$MYSQL_HOST --allow-root
+ 
++
+ wp core install --path=/var/www/html --url="eamar.42.fr" --title="elephant de grabouilli" --admin_user=$MYSQL_ADMIN_USER --admin_password=$MYSQL_ADMIN_USER_PASS --admin_email=elon.musk@yahoo.fr --allow-root
+ 
+ php-fpm7.3 -F -R
