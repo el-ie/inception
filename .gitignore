@@ -6,3 +6,5 @@ tls/
 compar_to_delete
 oldDockerfile
 script
+testBASE
+testBASE/

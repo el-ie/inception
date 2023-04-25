@@ -60,8 +60,8 @@ services:
     ports:
       - '3306:3306'
         # utilisation du volume ?
-        #volumes:
-      #- /home/bob/ceptique/separation/srcs/testBASE:/var/lib/mysql/
+    volumes:
+      - /home/bob/ceptique/separation/srcs/testBASE:/var/lib/mysql/
         # Que faire pour le volume
     environment:
       - MYSQL_DATABASE=${DATABASE_NAME}
