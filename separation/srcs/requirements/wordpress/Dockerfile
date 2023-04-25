@@ -24,4 +24,7 @@ COPY ./script_wordpress /root/utils/
 
 CMD ["sh", "/root/utils/script_wordpress"]
 
+#CMD ["tail", "-f", "/dev/null"]
+
+#-----------------------------
 #CMD ["php-fpm7.3", "-F", "-R"]

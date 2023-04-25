@@ -8,3 +8,5 @@ oldDockerfile
 script
 testBASE
 testBASE/
+DATABASE
+SITE

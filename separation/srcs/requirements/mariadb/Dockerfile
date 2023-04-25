@@ -18,6 +18,9 @@ COPY ./script_mariadb /
 
 CMD ["sh", "/script_mariadb"]
 
+#CMD ["tail", "-f", "/dev/null"]
+
+#-------------------------------
 #Run service mysql start \
 #&& mysql -e "CREATE DATABASE $MYSQL_DATABASE;" \
 #&& mysql -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'wordpress.srcs_inception_network' IDENTIFIED BY '$MYSQL_USER_PASS' WITH GRANT OPTION;" \
