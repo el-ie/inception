@@ -1,16 +1,10 @@
-attention nginxC changer le nom du conainer en nginx tout court
 
 variables environnement
-
-ajouter
-
-depends on
 
 nom de domaine correcte ?
 
 makefile
 
-volume de mariadb ?
 
 network :
 mettre quelque chose apres ??
@@ -18,15 +12,7 @@ host est interdit, voir ce qui se passe par defaut quand il n y a pas d/argument
 
 mettre les volumes au bon endroit (home/<login>/data) ...
 
-mariadb : checker si la database existe
-
-TLSv1.3
-
-volume wordpress
-ne pas refaire l'installation si il y a deja wordpress ?!!
-
 mettre un mot de passe a mariadb
-
 
 Dans env :
 
@@ -46,13 +32,6 @@ tester si les fichiers wordpress existent avec de wp core isntall ??
 
 ------------
 
-Login wordpress :
-
-attention incomprehension entre utilisateur wordpress et utilisateur mariadb
-(voir script_wordpress). 
-Il faut creer un second utilisateur wordpress en plus de l'admin et je crois
-que tobi n'est pas un utilisateur wordpress mais l'utilisateur mariadb ??
-utiliser jocker appelle a un ami
 
 ----
 
@@ -75,8 +54,6 @@ test docker network ls et faire un incpect pour voir si on voit bien toutes les 
 
 tester persistance commentaire wordpress
 
-ajouter utilisateur wordpress
-
 mettre % dans wp cli pour l'utilisateur ? dans mariadb ??
 
 probleme : si on cherche une page wordpress qui existe pas ca renvoi pas de 404 mais ca reste sur la page d accueil
@@ -85,3 +62,21 @@ attention performance virtualbox nombre de coeurs etc
 ne pas push .env ?
 
 attention :  a la fin du docker-compose, network : , que mettre ici
+
+=============== FAIT ==========
+
+volume wordpress
+ne pas refaire l'installation si il y a deja wordpress ?!!
+
+attention nginxC changer le nom du conainer en nginx tout court
+
+ajouter
+depends on
+
+Login wordpress :
+attention incomprehension entre utilisateur wordpress et utilisateur mariadb
+(voir script_wordpress). 
+Il faut creer un second utilisateur wordpress en plus de l'admin et je crois
+que tobi n'est pas un utilisateur wordpress mais l'utilisateur mariadb ??
+utiliser jocker appelle a un ami
+ajouter utilisateur wordpress
