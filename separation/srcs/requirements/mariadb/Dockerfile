@@ -22,9 +22,9 @@ Run apt-get install mariadb-server -y
 #fail :
 #Run mysqld
 
-#CMD ["sh", "/script_mariadb"]
+CMD ["sh", "/script_mariadb"]
 
-CMD ["tail", "-f", "/dev/null"]
+#CMD ["tail", "-f", "/dev/null"]
 
 #-------------------------------
 #Run service mysql start \

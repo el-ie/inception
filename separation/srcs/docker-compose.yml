@@ -17,7 +17,8 @@ services:
           - mariadb
           - wordpress
       volumes:
-          - /home/bob/ceptique/separation/srcs/SITE:/var/www/html
+          - wordpress_volume:/var/www/html
+            #- /home/bob/ceptique/separation/srcs/SITE:/var/www/html
             #- /home/eamar/data/site:/var/www/html/
 
       restart: always
@@ -38,7 +39,8 @@ services:
       depends_on:
           - mariadb
       volumes:
-          - /home/bob/ceptique/separation/srcs/SITE:/var/www/html
+          - wordpress_volume:/var/www/html
+            #- /home/bob/ceptique/separation/srcs/SITE:/var/www/html
             #- /home/eamar/data/site:/var/www/html/
       environment:
           - MYSQL_DATABASE=${DATABASE_NAME}
@@ -93,16 +95,23 @@ volumes:
       type: none
       device: /home/bob/ceptique/separation/srcs/DATABASE
       o: bind
+  wordpress_volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/bob/ceptique/separation/srcs/SITE
+      o: bind
 
 
 
-    #volumes:
-    #  mariadb
-    #  volumes:
-    #mariadb:
-    #  driver: local
-    #  driver_opts:
-    #    type: 'none'
-    #    o: 'bind'
-    #    device: /home/bob/ceptique/separation/srcs/DATABASE
+
+  #volumes:
+  #  mariadb
+  #  volumes:
+  #mariadb:
+  #  driver: local
+  #  driver_opts:
+  #    type: 'none'
+  #    o: 'bind'
+  #    device: /home/bob/ceptique/separation/srcs/DATABASE
 
