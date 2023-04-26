@@ -9,6 +9,8 @@ wp config create --path=/var/www/html --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_U
 
 wp core install --path=/var/www/html --url="eamar.42.fr" --title="elephant de grabouilli" --admin_user=$MYSQL_ADMIN_USER --admin_password=$MYSQL_ADMIN_USER_PASS --admin_email=elon.musk@yahoo.fr --allow-root
 
+wp user create --path=/var/www/html thomas thomas@exemple.com --user_pass=pass --role=editor --allow-root
+
 else
 	echo Wordpress already installed, installation step skipped
 fi
