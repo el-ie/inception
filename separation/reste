@@ -59,3 +59,22 @@ utiliser jocker appelle a un ami
 Attention au message d'erreur de nginx lors du compose up, hostname machin...
 
 checker les logs pour voir si il n y a pas de probleme
+
+-----------------
+fermer port 80
+
+ne pas push .env
+
+checker sertificat tls sur navigateur
+
+regler les probles de logs et notamment mysql qui se lance pas la premiere fois
+
+MAKEFILE
+
+test docker network ls et faire un incpect pour voir si on voit bien toutes les containers
+
+tester persistance commentaire wordpress
+
+ajouter utilisateur wordpress
+
+mettre % dans wp cli pour l'utilisateur ? dans mariadb ??
