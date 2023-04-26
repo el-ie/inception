@@ -1,10 +1,10 @@
 
-variables environnement
+MAKEFILE
 
 nom de domaine correcte ?
 
-makefile
 
+remettre les volumes au bon endroit
 
 network :
 mettre quelque chose apres ??
@@ -29,6 +29,8 @@ reparer le 666 a faire a chaque fois
 tester la persistance des donnees etc...
 
 tester si les fichiers wordpress existent avec de wp core isntall ??
+
+truc root de O
 
 ------------
 
@@ -62,6 +64,8 @@ attention performance virtualbox nombre de coeurs etc
 ne pas push .env ?
 
 attention :  a la fin du docker-compose, network : , que mettre ici
+
+variables environnement
 
 =============== FAIT ==========
 
