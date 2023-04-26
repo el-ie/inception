@@ -78,3 +78,10 @@ tester persistance commentaire wordpress
 ajouter utilisateur wordpress
 
 mettre % dans wp cli pour l'utilisateur ? dans mariadb ??
+
+probleme : si on cherche une page wordpress qui existe pas ca renvoi pas de 404 mais ca reste sur la page d accueil
+
+attention performance virtualbox nombre de coeurs etc
+ne pas push .env ?
+
+attention :  a la fin du docker-compose, network : , que mettre ici
