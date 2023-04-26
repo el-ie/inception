@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#REMETTRE
-#sleep 20
+if [ ! -e "/var/www/html/wp-config.php" ]; then
 
 wp core download --path=/var/www/html --allow-root
 
@@ -9,5 +8,13 @@ wp config create --path=/var/www/html --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_U
 
 
 wp core install --path=/var/www/html --url="eamar.42.fr" --title="elephant de grabouilli" --admin_user=$MYSQL_ADMIN_USER --admin_password=$MYSQL_ADMIN_USER_PASS --admin_email=elon.musk@yahoo.fr --allow-root
+
+else
+	echo
+	echo WORDPRESS EST DEJA INSTALLEEEEEEEEEEE
+	echo
+	echo
+	echo
+fi
 
 php-fpm7.3 -F -R
