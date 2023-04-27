@@ -2,6 +2,8 @@
 
 if [ ! -e "/var/www/html/wp-config.php" ]; then
 
+sleep 20
+
 wp core download --path=/var/www/html --allow-root
 
 wp config create --path=/var/www/html --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_USER --dbpass=$MYSQL_USER_PASS --dbhost=$MYSQL_HOST --allow-root
