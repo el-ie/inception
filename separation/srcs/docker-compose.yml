@@ -7,8 +7,8 @@ services:
       build:
         context: ./requirements/nginx
         dockerfile: Dockerfile
-        args:
-          DOMAIN_NAME: ${DOMAIN_NAME}
+          #args:
+          #  DOMAIN_NAME: ${DOMAIN_NAME}
         #INUTILISE POUR L INSTANT, UTILISER ??-> MODIFIER /etc/hosts ??
       ports:
           - '443:443'

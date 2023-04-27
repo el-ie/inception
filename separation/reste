@@ -1,8 +1,6 @@
 
 MAKEFILE
 
-nom de domaine correcte ?
-
 
 remettre les volumes au bon endroit
 
@@ -10,55 +8,32 @@ network :
 mettre quelque chose apres ??
 host est interdit, voir ce qui se passe par defaut quand il n y a pas d/argument
 
-mettre les volumes au bon endroit (home/<login>/data) ...
 
-mettre un mot de passe a mariadb
 
-Dans env :
-
-DOMAIN_NAME=wil.42.fr
-J'ai mis DOMAIN_NAME comme dans l'exemple, sauf que si on change le DOMAIN_NAME il faut modifier
-le fichier /etc/hosts donc j'ai mis l'arg dans le docker-compose mais je j'ai pas appelle
-dans le dockerfile, faut il faire ququ chose ?
-
-CERTS_=./XXXXX
-QU'est ce que c est que cette merde, ca appelle un fichier ??
+CERTS_=./XXXXX QU'est ce que c est que cette merde, ca appelle un fichier ??
 
 reparer le 666 a faire a chaque fois
 
 tester la persistance des donnees etc...
 
-tester si les fichiers wordpress existent avec de wp core isntall ??
-
-mot de passe mysql, mysql ne doit pas se lancer sans user
 
 tester la persistance
-
-------------
-
-
-----
 
 Attention au message d'erreur de nginx lors du compose up, hostname machin...
 
 checker les logs pour voir si il n y a pas de probleme
 
------------------
 fermer port 80
 
-ne pas push .env
+ne pas push .env ?
 
 checker sertificat tls sur navigateur
 
 regler les probles de logs et notamment mysql qui se lance pas la premiere fois
 
-MAKEFILE
-
 test docker network ls et faire un incpect pour voir si on voit bien toutes les containers
 
-tester persistance commentaire wordpress
 
-mettre % dans wp cli pour l'utilisateur ? dans mariadb ??
 
 probleme : si on cherche une page wordpress qui existe pas ca renvoi pas de 404 mais ca reste sur la page d accueil
 
@@ -86,3 +61,20 @@ Il faut creer un second utilisateur wordpress en plus de l'admin et je crois
 que tobi n'est pas un utilisateur wordpress mais l'utilisateur mariadb ??
 utiliser jocker appelle a un ami
 ajouter utilisateur wordpress
+
+mettre un mot de passe a mariadb
+
+nom de domaine correcte ?
+
+Dans env :
+
+DOMAIN_NAME=wil.42.fr
+J'ai mis DOMAIN_NAME comme dans l'exemple, sauf que si on change le DOMAIN_NAME il faut modifier
+le fichier /etc/hosts donc j'ai mis l'arg dans le docker-compose mais je j'ai pas appelle
+dans le dockerfile, faut il faire ququ chose ?
+
+tester si les fichiers wordpress existent avec de wp core isntall ??
+
+mot de passe mysql, mysql ne doit pas se lancer sans user
+
+mettre % dans wp cli pour l'utilisateur ? dans mariadb ??
