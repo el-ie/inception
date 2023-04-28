@@ -1,19 +1,25 @@
 #!/bin/bash
 
-mysqld &
+if [ ! -e "/var/lib/mysql/$MYSQL_DATABASE" ]; then
 
-sleep 3
+	mysqld &
 
-mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE $MYSQL_DATABASE;"
+	sleep 3
 
-mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_USER_PASS' WITH GRANT OPTION;"
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE $MYSQL_DATABASE;"
 
-mysql -uroot -p$MYSQL_ROOT_PASS -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('$MYSQL_ROOT_PASS');"
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_USER_PASS' WITH GRANT OPTION;"
 
-mysql -uroot -p$MYSQL_ROOT_PASS -e "FLUSH PRIVILEGES;"
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('$MYSQL_ROOT_PASS');"
 
-echo "root password set"
+	mysql -uroot -p$MYSQL_ROOT_PASS -e "FLUSH PRIVILEGES;"
 
-mysqladmin -uroot -p$MYSQL_ROOT_PASS shutdown
+	echo "root password set"
+
+	mysqladmin -uroot -p$MYSQL_ROOT_PASS shutdown
+
+else
+	echo Database already exist, creation step skipped
+fi
 
 exec mysqld

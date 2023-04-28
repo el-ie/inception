@@ -13,7 +13,7 @@ if [ ! -e "/var/www/html/wp-config.php" ]; then
 	wp user create --path=/var/www/html thomas thomas@exemple.com --user_pass=pass --role=editor --allow-root
 
 else
-	sleep 10
+	sleep 3
 	echo Wordpress already installed, installation step skipped
 fi
 
