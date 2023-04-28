@@ -1,23 +1,71 @@
 #!/bin/bash
 
-service mysql start
+#if [ ! -e "/var/lib/mysql/$MYSQL_DATABASE" ]; then
 
-if [ ! -e "/var/lib/mysql/$MYSQL_DATABASE" ]; then
+#echo '$MYSQL_DATABASE'
+#echo $MYSQL_DATABASE
+#echo '$MYSQL_USER'
+#echo $MYSQL_USER
+#echo '$MYSQL_USER_PASS'
+#echo $MYSQL_USER_PASS
+#echo '$MYSQL_ROOT_PASS'
+#echo $MYSQL_ROOT_PASS
 
-mysql -e "CREATE DATABASE $MYSQL_DATABASE;"
+#if [ ! -e "/var/lib/mysql/$MYSQL_DATABASE" ]; then
 
-else
-	echo database is already present, creation step skipped
-fi
+mkdir -p /run/mysqld && chown -R mysql:mysql /run/mysqld
 
-mysql -u root -p$MYSQL_ROOT_PASS -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASS';"
+#mysql_install_db --datadir=/var/lib/mysql
 
-mysql -u root -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_USER_PASS' WITH GRANT OPTION;"
+mysqld &
 
-mysql -u root -p$MYSQL_ROOT_PASS -e "FLUSH PRIVILEGES;"
+sleep 3
 
-service mysql stop
+mysql -uroot -p$MYSQL_ROOT_PASS -e "CREATE DATABASE $MYSQL_DATABASE;"
 
-kill $(cat /var/run/mysqld/mysqld.pid)
+mysql -uroot -p$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_USER_PASS' WITH GRANT OPTION;"
 
-mysqld
+mysql -uroot -p$MYSQL_ROOT_PASS -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('$MYSQL_ROOT_PASS');"
+
+echo "Set pass for root"
+
+mysql -uroot -p$MYSQL_ROOT_PASS -e "FLUSH PRIVILEGES;"
+
+echo "Done"
+
+mysqladmin -uroot -p$MYSQL_ROOT_PASS shutdown
+
+exec mysqld
+
+#else
+#	echo database is already present, creation step skipped
+#fi
+
+##########################################3
+#if [ ! -e "/var/lib/mysql/$MYSQL_DATABASE" ]; then
+#
+#mysql_install_db --datadir=/var/lib/mysql
+#
+#mysqld_safe &
+#
+#sleep 3
+#
+#mysql -e "CREATE DATABASE $MYSQL_DATABASE;"
+#
+#mysql -e "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_USER_PASS' WITH GRANT OPTION;"
+#
+#mysql -e "FLUSH PRIVILEGES;"
+#
+#mysqld 	--init-file=/change_root_pass
+#
+#else
+#	echo database is already present, creation step skipped
+#	mysqld
+#fi
+
+#service mysql stop
+
+#kill $(cat /var/run/mysqld/mysqld.pid)
+
+#mysqld
+#tail -f /dev/null

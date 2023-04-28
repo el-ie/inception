@@ -8,9 +8,9 @@ Run apt-get update -y \
 COPY ./conf/my.cnf /etc/mysql/my.cnf
 
 
-ARG MYSQL_DATABASE
-ARG MYSQL_USER
-ARG MYSQL_USER_PASS
+#ARG MYSQL_DATABASE
+#ARG MYSQL_USER
+#ARG MYSQL_USER_PASS
 
 COPY ./script_mariadb /
 
@@ -18,4 +18,5 @@ COPY ./script_mariadb /
 Run apt-get install mariadb-server -y
 
 CMD ["sh", "/script_mariadb"]
+#CMD ["tail", "-f", "/dev/null"]
 

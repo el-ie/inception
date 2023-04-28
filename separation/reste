@@ -8,16 +8,11 @@ network :
 mettre quelque chose apres ??
 host est interdit, voir ce qui se passe par defaut quand il n y a pas d/argument
 
-
-
 CERTS_=./XXXXX QU'est ce que c est que cette merde, ca appelle un fichier ??
 
 reparer le 666 a faire a chaque fois
 
 tester la persistance des donnees etc...
-
-
-tester la persistance
 
 Attention au message d'erreur de nginx lors du compose up, hostname machin...
 
