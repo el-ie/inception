@@ -1,44 +1,41 @@
 
 MAKEFILE
 
-ARG domain name ?
-
-network :
-mettre quelque chose apres ??
-host est interdit, voir ce qui se passe par defaut quand il n y a pas d/argument
-
-CERTS_=./XXXXX QU'est ce que c est que cette merde, ca appelle un fichier ??
-
 reparer le 666 a faire a chaque fois
-
-tester la persistance des donnees etc...
 
 Attention au message d'erreur de nginx lors du compose up, hostname machin...
 
-checker les logs pour voir si il n y a pas de probleme
-
-fermer port 80
 
 ne pas push .env ?
+
+
+
+=============== tester
+
+tester la persistance des donnees etc...
 
 checker sertificat tls sur navigateur
 
-regler les probles de logs et notamment mysql qui se lance pas la premiere fois
-
 test docker network ls et faire un incpect pour voir si on voit bien toutes les containers
 
+variables env
 
-
-probleme : si on cherche une page wordpress qui existe pas ca renvoi pas de 404 mais ca reste sur la page d accueil
+checker les logs pour voir si il n y a pas de probleme
 
 attention performance virtualbox nombre de coeurs etc
+
+=============== comprendre
+
 ne pas push .env ?
 
-attention :  a la fin du docker-compose, network : , que mettre ici
+network : drivere bridge
+volumes
 
-variables environnement
+CERTS_=./XXXXX QU'est ce que c est que cette merde, ca appelle un fichier ??
 
 =============== FAIT ==========
+
+ARG domain name ?
 
 volume wordpress
 ne pas refaire l'installation si il y a deja wordpress ?!!
@@ -74,3 +71,9 @@ mot de passe mysql, mysql ne doit pas se lancer sans user
 mettre % dans wp cli pour l'utilisateur ? dans mariadb ??
 
 remettre les volumes au bon endroit
+
+fermer port 80
+
+regler les probles de logs et notamment mysql qui se lance pas la premiere fois
+
+probleme : si on cherche une page wordpress qui existe pas ca renvoi pas de 404 mais ca reste sur la page d accueil
