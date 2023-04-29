@@ -1,8 +1,7 @@
 
 MAKEFILE
 
-
-remettre les volumes au bon endroit
+ARG domain name ?
 
 network :
 mettre quelque chose apres ??
@@ -73,3 +72,5 @@ tester si les fichiers wordpress existent avec de wp core isntall ??
 mot de passe mysql, mysql ne doit pas se lancer sans user
 
 mettre % dans wp cli pour l'utilisateur ? dans mariadb ??
+
+remettre les volumes au bon endroit
