@@ -20,7 +20,7 @@ down:
 clean: down
 	docker system prune -af
 	docker volume prune -f
-	docker volume rm $$(docker volume ls -qf dangling=true)
+	docker volume rm $$(docker volume ls -q)
 
 fclean : clean
 	sudo rm -rf /home/eamar/data/site
