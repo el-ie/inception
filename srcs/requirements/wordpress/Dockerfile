@@ -19,7 +19,7 @@ Run curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 #ajout
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
 
-COPY ./script_wordpress /root/utils/
+COPY ./utils/script_wordpress /root/utils/
 
 CMD ["sh", "/root/utils/script_wordpress"]
 #CMD ["tail", "-f", "/dev/null"]

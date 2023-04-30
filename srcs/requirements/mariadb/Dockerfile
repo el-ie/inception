@@ -7,7 +7,7 @@ Run apt-get update -y \
 && chown -R www-data /var/www/html
 
 COPY ./conf/my.cnf /etc/mysql/my.cnf
-COPY ./script_mariadb /
+COPY ./utils/script_mariadb /
 
 Run mkdir -p /run/mysqld
 Run chown -R mysql:mysql /run/mysqld
